@@ -87,23 +87,17 @@ header nav a:hover {
 }
 
 #site-title {
-    transition: transform 0.3s ease; /* Smooth scaling effect */
-}
-
-#site-title:hover {
-    transform: scale(1.1); /* Enlarge slightly on hover */
+    display: inline-block; /* Ensure the name behaves as a block for alignment */
+    margin: 0; /* Remove default margin */
+    vertical-align: middle; /* Align with the job title */
 }
 
 #job-title {
-    font-size: 1.2rem;
+    display: inline-block; /* Ensure the job title behaves as a block for alignment */
+    margin: 0; /* Remove default margin */
+    vertical-align: middle; /* Align with the name */
+    font-size: 1rem; /* Adjust font size for better alignment */
     color: #6B7280; /* Medium gray text */
-    text-align: center;
-    margin-top: 0.5rem;
-    transition: transform 0.3s ease; /* Smooth scaling effect */
-}
-
-#job-title:hover {
-    transform: scale(1.1); /* Enlarge slightly on hover */
 }
 
 /* Sections */

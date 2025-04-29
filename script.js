@@ -8,7 +8,7 @@ const translations = {
         navExperience: "Experience",
         navHobbies: "Hobbies",
         aboutTitle: "About Me",
-        aboutText: "I am a passionate IT professional with a strong focus on delivering innovative solutions. My goal is to continuously grow and contribute to impactful projects.",
+        aboutText: " Aspiring Data Analyst and AI student at Poznan University of Technology, passionate about Data Analysis and Business Intelligence. Experienced in extracting insights from data to solve real-world problems and optimize processes. Constantly learning and seeking opportunities to contribute to innovative data solutions.",
         projectsTitle: "Projects",
         project1Title: "Project 1",
         project1Text: "Developed a web application using React and Node.js to streamline task management for teams.",
@@ -19,6 +19,7 @@ const translations = {
         hobbiesTitle: "Hobbies",
         hobbiesText: "In my free time, I enjoy hiking, photography, and exploring new technologies. These activities help me stay creative and energized.",
         skillsTitle: "Skills",
+        jobTitle: "Poznan University of Technology AI student | Aspiring Data Analyst | AI & Data Enthusiast",
         footerText: "© 2025 Marianna Myszkowska. All rights reserved."
     },
     pl: {
@@ -30,7 +31,7 @@ const translations = {
         navExperience: "Doświadczenie",
         navHobbies: "Hobby",
         aboutTitle: "O Mnie",
-        aboutText: "Jestem pasjonatką IT z silnym naciskiem na dostarczanie innowacyjnych rozwiązań. Moim celem jest ciągły rozwój i udział w znaczących projektach.",
+        aboutText: " Aspirująca analityczka danych i studentka sztucznej inteligencji na Politechnice Poznańskiej, pasjonująca się analizą danych i Business Intelligence. Doświadczenie w pozyskiwaniu informacji z danych w celu rozwiązywania rzeczywistych problemów i optymalizacji procesów. Stale rozwijam swoje umiejętności i szukam okazji, aby przyczynić się do innowacyjnych rozwiązań opartych na danych.",
         projectsTitle: "Projekty",
         project1Title: "Projekt 1",
         project1Text: "Stworzyłam aplikację internetową za pomocą React i Node.js, aby usprawnić zarządzanie zadaniami w zespołach.",
@@ -41,6 +42,7 @@ const translations = {
         hobbiesTitle: "Hobby",
         hobbiesText: "W wolnym czasie lubię wędrówki, fotografię i odkrywanie nowych technologii. Te aktywności pomagają mi zachować kreatywność i energię.",
         skillsTitle: "Umiejętności",
+        jobTitle: "Studentka sztucznej inteligencji na Politechnice Poznańskiej | Aspirująca analityczka danych | Entuzjastka AI i danych",
         footerText: "© 2025 Marianna Myszkowska. Wszelkie prawa zastrzeżone."
     }
 };
@@ -55,6 +57,7 @@ document.getElementById('switch-lang').addEventListener('click', () => {
 function updateLanguage() {
     const t = translations[currentLang];
     document.getElementById('site-title').textContent = t.siteTitle;
+    document.getElementById('job-title').textContent = t.jobTitle; // Update the job title dynamically
     document.getElementById('nav-about').textContent = t.navAbout;
     document.getElementById('nav-projects').textContent = t.navProjects;
     document.getElementById('nav-skills').textContent = t.navSkills;
