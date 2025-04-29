@@ -90,6 +90,11 @@ header nav a:hover {
     display: inline-block; /* Ensure the name behaves as a block for alignment */
     margin: 0; /* Remove default margin */
     vertical-align: middle; /* Align with the job title */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+#site-title:hover {
+    transform: scale(1.2); /* Enlarge the name slightly on hover */
 }
 
 #job-title {
@@ -132,10 +137,9 @@ section h2 {
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 cards on the top row */
-    gap: 1rem; /* Space between cards */
-    justify-content: center; /* Center the grid */
-    padding: 1rem 0;
+    grid-template-columns: repeat(5, minmax(150px, 1fr)); /* Ensure cards fit within the section */
+    justify-content: center; /* Center the entire grid */
+    padding: 2rem 0; /* Add more padding for better spacing */
 }
 
 .skill-box {
@@ -148,11 +152,11 @@ section h2 {
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
-    margin-bottom: 2rem; /* Add more spacing between skill cards */
+    margin-bottom: 2.5rem; /* Add a bit more spacing between cards */
     cursor: pointer; /* Indicate interactivity */
     overflow: hidden; /* Prevent content overflow during expansion */
-    width: 180px; /* Reduce the width */
-    height: 220px; /* Reduce the height */
+    width: 170px; /* Slightly reduce the width */
+    height: 210px; /* Slightly reduce the height */
     display: flex; /* Center content inside the card */
     flex-direction: column; /* Align content vertically */
     justify-content: center; /* Center content vertically */
@@ -167,21 +171,21 @@ section h2 {
 }
 
 .skill-box:hover .skill-title {
-    font-size: 1.2rem; /* Slightly smaller font for the main title */
-    font-weight: bold; /* Keep it bold */
-    margin-bottom: 0.5rem; /* Add spacing below the title */
-    text-align: center; /* Keep it centered */
+    transform: translateY(-10px); /* Move the title up slightly */
+    transition: transform 0.3s ease; /* Smooth transition for movement */
+    font-size: 1.8rem; /* Keep the font size consistent */
+    margin-bottom: 0.5rem; /* Reduce spacing below the title */
 }
 
 .skill-title {
     font-size: 1.8rem; /* Increase the default size for the main title */
-    margin-bottom: 1.2rem; /* Add more spacing below the title */
+    margin-bottom: 0.5rem; /* Reduce spacing below the title */
     transition: font-size 0.3s ease, margin-bottom 0.3s ease; /* Smooth transition for resizing */
 }
 
 .skill-details {
     display: none; /* Hide the detailed skills by default */
-    margin-top: 0.5rem; /* Add spacing between the main skill and details */
+    margin-top: 0.3rem; /* Reduce spacing above the details */
     text-align: left; /* Align details to the left */
     font-size: 1.1rem; /* Slightly larger font for details */
     color: #1F2937; /* Consistent text color */
@@ -197,9 +201,10 @@ section h2 {
 }
 
 .skill-box:nth-child(n+6) {
-    grid-column: span 1; /* Ensure 4 cards on the bottom row */
+    grid-column: span 1; /* Ensure each card spans one column */
     grid-row: 2; /* Place these cards in the second row */
-    justify-self: center; /* Center cards in the row */
+    margin-top: -1rem; /* Adjust vertical alignment slightly */
+    transform: translateX(50%); /* Offset cards to align with spaces above */
 }
 
 /* Project and Case Study Cards */
@@ -276,19 +281,29 @@ footer {
     border-radius: 8px; /* Match border radius */
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
     width: auto; /* Ensure it adjusts to content size */
     height: auto; /* Ensure it matches the height of resume buttons */
     min-width: 80px; /* Ensure the button has a consistent width */
     text-align: center; /* Center the text inside the button */
 }
 
+.language-switcher button:hover {
+    background-color: #F7A8A8; /* Change background to darker pastel pink */
+    color: #1F2937; /* Ensure text remains readable */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
 /* Adjust specific section sizes */
-#about {
-    grid-column: span 2; /* Span 2 columns */
-    grid-row: span 1; /* Span 1 row */
-    padding: 1.5rem; /* Make it smaller */
-    text-align: center; /* Center content inside the About Me section */
+#about, #contact {
+    grid-column: span 2; /* Ensure both sections span 2 columns */
+    grid-row: span 1; /* Each spans 1 row */
+    padding: 1.5rem; /* Equal padding */
+    background-color: #FFFFFF; /* Consistent background color */
+    color: #1F2937; /* Consistent text color */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+    text-align: center; /* Center content */
 }
 
 #about .download-resume-button {
