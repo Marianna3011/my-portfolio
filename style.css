@@ -132,27 +132,74 @@ section h2 {
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid layout */
+    grid-template-columns: repeat(5, 1fr); /* 5 cards on the top row */
     gap: 1rem; /* Space between cards */
+    justify-content: center; /* Center the grid */
     padding: 1rem 0;
 }
 
 .skill-box {
-    background: #d9ebc3; /* Update background color to new green */
+    position: relative; /* Position relative for hover effect */
+    background: #d9ebc3; /* Keep the green background for skill cards */
     color: #0A0F0A; /* Dark green/black text */
-    padding: 1rem;
+    padding: 2.5rem; /* Increase padding for larger cards */
     text-align: center;
     border-radius: 8px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+    margin-bottom: 2rem; /* Add more spacing between skill cards */
+    cursor: pointer; /* Indicate interactivity */
+    overflow: hidden; /* Prevent content overflow during expansion */
+    width: 180px; /* Reduce the width */
+    height: 220px; /* Reduce the height */
+    display: flex; /* Center content inside the card */
+    flex-direction: column; /* Align content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 .skill-box:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow on hover */
     background-color: #F7A8A8; /* Change background to darker pastel pink */
     color: #1F2937; /* Ensure text remains readable */
+}
+
+.skill-box:hover .skill-title {
+    font-size: 1.2rem; /* Slightly smaller font for the main title */
+    font-weight: bold; /* Keep it bold */
+    margin-bottom: 0.5rem; /* Add spacing below the title */
+    text-align: center; /* Keep it centered */
+}
+
+.skill-title {
+    font-size: 1.8rem; /* Increase the default size for the main title */
+    margin-bottom: 1.2rem; /* Add more spacing below the title */
+    transition: font-size 0.3s ease, margin-bottom 0.3s ease; /* Smooth transition for resizing */
+}
+
+.skill-details {
+    display: none; /* Hide the detailed skills by default */
+    margin-top: 0.5rem; /* Add spacing between the main skill and details */
+    text-align: left; /* Align details to the left */
+    font-size: 1.1rem; /* Slightly larger font for details */
+    color: #1F2937; /* Consistent text color */
+    transition: opacity 0.3s ease, max-height 0.3s ease; /* Smooth fade-in and height expansion */
+    max-height: 0; /* Collapse the details initially */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.skill-box:hover .skill-details {
+    display: block; /* Show detailed skills only for the hovered card */
+    opacity: 1; /* Ensure smooth visibility */
+    max-height: 200px; /* Smoothly expand the height */
+}
+
+.skill-box:nth-child(n+6) {
+    grid-column: span 1; /* Ensure 4 cards on the bottom row */
+    grid-row: 2; /* Place these cards in the second row */
+    justify-self: center; /* Center cards in the row */
 }
 
 /* Project and Case Study Cards */
@@ -250,9 +297,9 @@ footer {
 }
 
 #skills {
-    grid-column: span 2; /* Span 2 columns */
-    grid-row: span 1; /* Span 1 row */
-    padding: 2rem; /* Medium size */
+    grid-column: span 4; /* Expand the Skills section to span all columns */
+    grid-row: span 2; /* Increase the height of the Skills section */
+    padding: 3rem; /* Add more padding for a larger section */
 }
 
 #projects {
