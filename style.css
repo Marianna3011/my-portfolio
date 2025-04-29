@@ -1,30 +1,54 @@
 /* General styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif; /* Revert font back to Arial */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f5f5f5; /* Light gray background */
-    color: #2c3e50; /* Dark gray text color */
+    background-image: url('images/background.jpg'); /* Set background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Fix the background in place */
+    color: #1F2937; /* Ensure text remains readable */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure body takes full height */
+    align-items: center; /* Center the grid container horizontally */
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid */
+    gap: 2rem; /* Space between grid items */
+    width: 95%; /* Increase the width of the grid */
+    max-width: 1400px; /* Optional: Set a larger maximum width */
+    margin: 2rem 0; /* Add spacing around the grid */
 }
 
 /* Header */
 header {
-    background: #14532d; /* Dark green background */
-    color: #ffffff; /* White text color */
-    padding: 1rem 2rem;
+    background: #FFFFFF; /* White background for header */
+    color: #000000; /* Black text color */
+    height: 110px; /* Slightly increase the height of the header */
+    padding: 0.4rem 1rem; /* Adjust padding for better spacing */
     display: flex;
+    align-items: center; /* Ensure content is vertically aligned */
+    overflow: hidden; /* Prevent content from overflowing */
     justify-content: center; /* Center the container horizontally */
+    width: 100%; /* Make the header span the full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    position: sticky; /* Make the header stick to the top */
+    top: 0; /* Align it to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
 }
 
 header .container {
-    width: 70%; /* Match the width of sections */
+    width: 95%; /* Match the width of the body */
+    max-width: 1400px; /* Ensure it aligns with the body max-width */
     margin: 0 auto; /* Center the content */
     display: flex;
     justify-content: space-between; /* Ensure space between site title and right-aligned elements */
+    align-items: center; /* Ensure vertical alignment remains consistent */
 }
 
 header nav {
@@ -47,36 +71,68 @@ header nav ul {
     padding: 0; /* Remove default padding */
 }
 
+/* Header Navigation Links */
 header nav a {
-    color: #ffffff; /* White text color */
+    color: #000000; /* Black text color for navigation links */
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem; /* Match the size of the job title */
+    border-bottom: 2px solid transparent; /* Add underline effect */
+    transition: border-color 0.3s ease;
 }
 
 header nav a:hover {
     text-decoration: underline;
+    border-color: #F7A8A8; /* Change underline to darker pastel pink */
 }
 
-/* Job Title */
+#site-title {
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+#site-title:hover {
+    transform: scale(1.1); /* Enlarge slightly on hover */
+}
+
 #job-title {
     font-size: 1.2rem;
-    color: #d1e7dd; /* Light green-gray text */
+    color: #6B7280; /* Medium gray text */
     text-align: center;
     margin-top: 0.5rem;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+#job-title:hover {
+    transform: scale(1.1); /* Enlarge slightly on hover */
 }
 
 /* Sections */
 section {
     padding: 2rem;
-    background-color: #ffffff; /* White background for sections */
-    color: #2c3e50; /* Dark gray text color */
-    flex: 1; /* Allow sections to grow and push footer down */
-    margin-bottom: 1rem;
+    background-color: #FFFFFF; /* White background for sections */
+    color: #1F2937; /* Near black text color */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
-    width: 70%; /* Limit the width of sections */
-    margin: 0 auto; /* Center sections horizontally */
+    position: relative; /* Ensure sections can move independently */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth movement and shadow effect */
+}
+
+section:hover {
+    transform: translateY(-10px); /* Slight upward movement on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: scale(1.05);
+    
+}
+
+section h2 {
+    text-align: center; /* Center all section headers */
+    width: 100%; /* Ensure the header spans the full width */
+    margin: 0 auto; /* Center the header horizontally */
+    font-size: 2rem; /* Increase font size */
+    margin-bottom: 1rem; /* Add spacing below the header */
+    border-bottom: 4px solid #F7A8A8; /* Change underline to darker pastel pink */
+    display: inline-block;
+    padding-bottom: 0.5rem;
 }
 
 /* Skills Grid */
@@ -88,8 +144,8 @@ section {
 }
 
 .skill-box {
-    background: #1b4332; /* Darker green background */
-    color: #ffffff; /* White text color */
+    background: #d9ebc3; /* Update background color to new green */
+    color: #0A0F0A; /* Dark green/black text */
     padding: 1rem;
     text-align: center;
     border-radius: 8px;
@@ -101,6 +157,8 @@ section {
 .skill-box:hover {
     transform: translateY(-5px); /* Slight lift on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    background-color: #F7A8A8; /* Change background to darker pastel pink */
+    color: #1F2937; /* Ensure text remains readable */
 }
 
 /* Project and Case Study Cards */
@@ -111,37 +169,112 @@ section {
 }
 
 .project-card {
-    background: #ffffff; /* White background for cards */
+    background: #d9ebc3; /* Update background color to new green */
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: #2c3e50; /* Dark gray text color */
+    color: #1F2937; /* Near black text color */
+}
+
+.project-card:hover {
+    background-color: #F7A8A8; /* Change background to darker pastel pink */
+    color: #1F2937; /* Ensure text remains readable */
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 /* Footer */
 footer {
-    background: #14532d; /* Dark green background */
-    color: #ffffff; /* White text color */
+    background: #FFFFFF; /* White background for footer */
+    color: #000000; /* Black text color */
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
-    position: sticky;
+    position: flex;
     bottom: 0;
     width: 100%;
 }
 
-/* Language Switcher */
-.language-switcher button {
-    background: transparent;
-    color: #ffffff; /* White text color */
-    border: 1px solid #ffffff; /* White border */
-    font-size: 1.2rem; /* Increase font size */
-    padding: 0.8rem 1.5rem; /* Add more padding for a larger button */
-    border-radius: 8px; /* Optional: Make the button more rounded */
-    cursor: pointer;
+/* Resume Button */
+.download-resume-button {
+    display: inline-flex; /* Use flexbox for icon and text alignment */
+    align-items: center; /* Vertically align icon and text */
+    gap: 0.5rem; /* Add space between the icon and text */
+    padding: 0.8rem 1.5rem;
+    background-color: #d9ebc3; /* Update background color to new green */
+    color: #000000; /* Black text color */
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 2px solid #6C464E; /* Add burgundy/purple border */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.language-switcher button:hover {
-    background: #ffffff; /* White background */
-    color: #14532d; /* Dark green text color */
+.download-resume-button:hover {
+    background-color: #F7A8A8; /* Change background to darker pastel pink */
+    color: #1F2937; /* Ensure text remains readable */
+    transform: translateY(-3px); /* Slight lift on hover */
+    border-color: #6B7280; /* Change border to medium gray */
+}
+
+.button-icon {
+    font-size: 1.5rem; /* Adjust icon size */
+}
+
+/* Translation Button */
+.language-switcher button {
+    display: inline-flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align icon and text */
+    gap: 0.5rem; /* Add space between the icon and text */
+    background-color: #d9ebc3; /* Update background color to new green */
+    color: #000000; /* Black text color */
+    border: 2px solid #6C464E; /* Add burgundy/purple border */
+    font-size: 1.2rem; /* Match font size with resume buttons */
+    padding: 0.8rem 1.5rem; /* Match padding with resume buttons */
+    border-radius: 8px; /* Match border radius */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Ensure it adjusts to content size */
+    height: auto; /* Ensure it matches the height of resume buttons */
+    min-width: 80px; /* Ensure the button has a consistent width */
+    text-align: center; /* Center the text inside the button */
+}
+
+/* Adjust specific section sizes */
+#about {
+    grid-column: span 2; /* Span 2 columns */
+    grid-row: span 1; /* Span 1 row */
+    padding: 1.5rem; /* Make it smaller */
+    text-align: center; /* Center content inside the About Me section */
+}
+
+#about .download-resume-button {
+    display: inline-flex; /* Ensure buttons are inline and aligned */
+    margin: 0.5rem; /* Add spacing between buttons */
+}
+
+#skills {
+    grid-column: span 2; /* Span 2 columns */
+    grid-row: span 1; /* Span 1 row */
+    padding: 2rem; /* Medium size */
+}
+
+#projects {
+    grid-column: span 4; /* Span all 4 columns */
+    grid-row: span 2; /* Span 2 rows */
+    padding: 3rem; /* Make it larger */
+}
+
+#experience {
+    grid-column: span 2; /* Span 2 columns */
+    grid-row: span 1; /* Span 1 row */
+    padding: 1.5rem; /* Shorter height */
+}
+
+#hobbies {
+    grid-column: span 2; /* Span 2 columns */
+    grid-row: span 1; /* Span 1 row */
+    padding: 1.5rem; /* Shorter height */
 }
