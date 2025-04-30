@@ -7,43 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="container">
             <h1 id="site-title">Marianna Myszkowska</h1>
-            <p id="job-title" style="text-align: center; margin-top: 0.5rem;">Poznan University of Technology AI student | Aspiring Data Analyst | AI & Data Enthusiast</p>
+            <p id="job-title" style="text-align: center; margin-top: 0.5rem;">Poznan University of Technology AI student | Aspiring Data Analyst and Data Scientist</p>
             <div class="language-switcher">
-                <button id="switch-lang">English</button>
+                <button id="switch-lang">POLISH</button>
             </div>
         </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#" data-section="about-contact">About Me & Contact</a></li>
+                <li><a href="#" data-section="skills">Skills</a></li>
+                <li><a href="#" data-section="projects">Projects</a></li>
+                <li><a href="#" data-section="experience">Experience</a></li>
+                <li><a href="#" data-section="hobbies">Hobbies</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section id="about">
+        <section id="about-contact">
             <h2 id="about-title">About Me</h2>
-            <p id="about-text"> Aspiring Data Analyst and AI student at Poznan University of Technology, passionate about Data Analysis
-                and Business Intelligence. Experienced in extracting insights from data to solve real-world problems and
-                optimize processes. Constantly learning and seeking opportunities to contribute to innovative data
-                solutions.</p>
+            <p id="about-text">Hi, I'm Marianna Myszkowska, an Artificial Intelligence student at Poznań University of Technology, based in Poznań, Poland. I'm passionate about Data Science and Data Analysis, and I'm actively working toward a career that combines both.</p>
+            <p>Currently, I work as an Integrations Specialist at Lawbiz Technology, contributing to the development of the Umownik application. In addition to my data interests, I enjoy front-end development and programming, which allows me to build intuitive interfaces and bridge the gap between data and users.</p>
+            <h3 id="contact-title">Contact</h3>
+            <p id="contact-text"><b>Feel free to reach out to me for collaboration or inquiries!</b></p>
+            <p><b>Email:</b> <a href="mailto:marianna.z.myszkowska@gmail.com">marianna.z.myszkowska@gmail.com</a></p>
+            <p><b>Phone:</b> +48 537 050 779</p>
+            <p><b>LinkedIn:</b> <a href="https://linkedin.com/in/marianna" target="_blank">https://www.linkedin.com/in/marianna-myszkowska-96488b342</a></p>
+            <p><b>GitHub:</b> <a href="https://github.com/marianna-myszkowska" target="_blank">github.com/marianna-myszkowska</a></p>
             <a href="resume.pdf" target="_blank" class="download-resume-button">
                 <span class="button-icon">🇬🇧</span> Resume
             </a>
             <a href="resume-pl.pdf" target="_blank" class="download-resume-button">
                 <span class="button-icon">🇵🇱</span> Resume
-            </a> <!-- Move both resume buttons here -->
+            </a>
         </section>
 
-        <section id="contact">
-            <h2 id="contact-title">Contact</h2>
-            <p id="contact-text">Feel free to reach out to me for collaboration or inquiries!</p>
-            <ul id="contact-info">
-                <li>Email: <a href="mailto:marianna@example.com">marianna@example.com</a></li>
-                <li>Phone: +48 123 456 789</li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/marianna" target="_blank">linkedin.com/in/marianna</a></li>
-            </ul>
-        </section>
-
-        <section id="skills">
+        <section id="skills" style="display: none;">
             <h2 id="skills-title">Skills</h2>
             <div class="skills-grid">
                 <!-- Top row with 5 cards -->
@@ -131,7 +133,7 @@
             </div>
         </section>
 
-        <section id="projects">
+        <section id="projects" style="display: none;">
             <h2 id="projects-title">Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
@@ -145,12 +147,12 @@
             </div>
         </section>
 
-        <section id="experience">
+        <section id="experience" style="display: none;">
             <h2 id="experience-title">Experience</h2>
             <p id="experience-text">I have worked on various projects, including web development, data visualization, and software engineering. My experience spans multiple industries, allowing me to adapt and deliver impactful solutions.</p>
         </section>
 
-        <section id="hobbies">
+        <section id="hobbies" style="display: none;">
             <h2 id="hobbies-title">Hobbies</h2>
             <p id="hobbies-text">In my free time, I enjoy hiking, photography, and exploring new technologies. These activities help me stay creative and energized.</p>
         </section>

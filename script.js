@@ -8,7 +8,7 @@ const translations = {
         navExperience: "Experience",
         navHobbies: "Hobbies",
         aboutTitle: "About Me",
-        aboutText: "I'm currently studying Artificial Intelligence at Poznań University of Technology, with a strong focus on data analysis and its practical applications. I am passionate about discovering insights hidden in data and using them to support smart, data-driven decisions. I’m actively expanding my skills in SQL, Python, data visualization, and machine learning, and I’m looking for opportunities to grow as a data analyst through real-world projects and internships.",
+        aboutText: "Hi, I'm <b>Marianna Myszkowska</b>, an Artificial Intelligence student at Poznań University of Technology, based in Poznań, Poland. I'm passionate about <b>Data Science</b> and <b>Data Analysis</b>, and I'm actively working toward a career that combines both. Currently, I work as an Integrations Specialist at Lawbiz Technology, contributing to the development of the Umownik application. In addition to my data interests, I enjoy front-end development and programming, which allows me to build intuitive interfaces and bridge the gap between data and users.",
         projectsTitle: "Projects",
         project1Title: "Project 1",
         project1Text: "Developed a web application using React and Node.js to streamline task management for teams.",
@@ -31,7 +31,7 @@ const translations = {
         navExperience: "Doświadczenie",
         navHobbies: "Hobby",
         aboutTitle: "O Mnie",
-        aboutText: "Studiuję Sztuczną Inteligencję na Politechnice Poznańskiej, koncentrując się na analizie danych i jej praktycznym zastosowaniu. Pasjonuje mnie odkrywanie ukrytych wzorców w danych i wykorzystywanie ich do podejmowania trafnych decyzji opartych na danych. Aktywnie rozwijam umiejętności w zakresie SQL, Pythona, wizualizacji danych oraz uczenia maszynowego. Szukam możliwości zdobycia doświadczenia jako analityczka danych poprzez projekty i praktyki.",
+        aboutText: "Cześć! Nazywam się <b>Marianna Myszkowska</b> i jestem studentką Sztucznej Inteligencji na Politechnice Poznańskiej. Mieszkam w Poznaniu i pasjonuję się <b>Data Science</b> oraz <b>analizą danych</b> — aktywnie rozwijam swoje umiejętności, by w przyszłości połączyć obie te dziedziny w swojej karierze zawodowej. Na co dzień pracuję jako Specjalistka ds. Integracji w firmie <b>Lawbiz Technology</b>, gdzie wspieram rozwój aplikacji Umownik. Poza światem danych interesuję się również programowaniem i frontendem, co pozwala mi tworzyć funkcjonalne i estetyczne interfejsy użytkownika oraz skutecznie łączyć warstwę technologiczną z doświadczeniem użytkownika. ",
         projectsTitle: "Projekty",
         project1Title: "Projekt 1",
         project1Text: "Stworzyłam aplikację internetową za pomocą React i Node.js, aby usprawnić zarządzanie zadaniami w zespołach.",
@@ -49,34 +49,55 @@ const translations = {
 
 let currentLang = 'en';
 
-document.getElementById('switch-lang').addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'pl' : 'en';
-    updateLanguage();
+document.addEventListener('DOMContentLoaded', function () {
+    const translation = translations[currentLang];
+    document.getElementById('site-title').innerHTML = translation.siteTitle; // Use innerHTML for bold text
+    document.getElementById('job-title').innerHTML = translation.jobTitle; // Use innerHTML for bold text
+    document.getElementById('about-title').textContent = translation.aboutTitle;
+    document.getElementById('about-text').innerHTML = translation.aboutText; // Use innerHTML for bold text
+    document.getElementById('projects-title').textContent = translation.projectsTitle;
+    document.getElementById('project1-title').textContent = translation.project1Title;
+    document.getElementById('project1-text').textContent = translation.project1Text;
+    document.getElementById('project2-title').textContent = translation.project2Title;
+    document.getElementById('project2-text').textContent = translation.project2Text;
+    document.getElementById('experience-title').textContent = translation.experienceTitle;
+    document.getElementById('experience-text').textContent = translation.experienceText;
+    document.getElementById('hobbies-title').textContent = translation.hobbiesTitle;
+    document.getElementById('hobbies-text').textContent = translation.hobbiesText;
+    document.getElementById('skills-title').textContent = translation.skillsTitle;
+    document.getElementById('footer-text').textContent = translation.footerText;
 });
 
-function updateLanguage() {
-    const t = translations[currentLang];
-    document.getElementById('site-title').textContent = t.siteTitle;
-    document.getElementById('job-title').textContent = t.jobTitle; // Update the job title dynamically
-    document.getElementById('nav-about').textContent = t.navAbout;
-    document.getElementById('nav-projects').textContent = t.navProjects;
-    document.getElementById('nav-skills').textContent = t.navSkills;
-    document.getElementById('nav-experience').textContent = t.navExperience;
-    document.getElementById('nav-hobbies').textContent = t.navHobbies;
-    document.getElementById('about-title').textContent = t.aboutTitle;
-    document.getElementById('about-text').textContent = t.aboutText;
-    document.getElementById('projects-title').textContent = t.projectsTitle;
-    document.getElementById('project1-title').textContent = t.project1Title;
-    document.getElementById('project1-text').textContent = t.project1Text;
-    document.getElementById('project2-title').textContent = t.project2Title;
-    document.getElementById('project2-text').textContent = t.project2Text;
-    document.getElementById('experience-title').textContent = t.experienceTitle;
-    document.getElementById('experience-text').textContent = t.experienceText;
-    document.getElementById('hobbies-title').textContent = t.hobbiesTitle;
-    document.getElementById('hobbies-text').textContent = t.hobbiesText;
-    document.getElementById('skills-title').textContent = t.skillsTitle;
-    document.getElementById('footer-text').textContent = t.footerText;
+document.getElementById('switch-lang').addEventListener('click', function () {
+    const button = this;
+    currentLang = currentLang === 'en' ? 'pl' : 'en'; // Toggle language
+    button.textContent = currentLang === 'en' ? 'Polish' : 'English'; // Update button text
 
-    // Change the button label too
-    document.getElementById('switch-lang').textContent = currentLang === 'en' ? "Polski" : "English";
-}
+    // Update page content based on the selected language
+    const translation = translations[currentLang];
+    document.getElementById('site-title').innerHTML = translation.siteTitle; // Use innerHTML for bold text
+    document.getElementById('job-title').innerHTML = translation.jobTitle; // Use innerHTML for bold text
+    document.getElementById('about-title').textContent = translation.aboutTitle;
+    document.getElementById('about-text').innerHTML = translation.aboutText; // Use innerHTML for bold text
+    document.getElementById('projects-title').textContent = translation.projectsTitle;
+    document.getElementById('project1-title').textContent = translation.project1Title;
+    document.getElementById('project1-text').textContent = translation.project1Text;
+    document.getElementById('project2-title').textContent = translation.project2Title;
+    document.getElementById('project2-text').textContent = translation.project2Text;
+    document.getElementById('experience-title').textContent = translation.experienceTitle;
+    document.getElementById('experience-text').textContent = translation.experienceText;
+    document.getElementById('hobbies-title').textContent = translation.hobbiesTitle;
+    document.getElementById('hobbies-text').textContent = translation.hobbiesText;
+    document.getElementById('skills-title').textContent = translation.skillsTitle;
+    document.getElementById('footer-text').textContent = translation.footerText;
+});
+
+document.querySelectorAll('nav ul.menu a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const sectionId = this.getAttribute('data-section');
+        document.querySelectorAll('main section').forEach(section => {
+            section.style.display = section.id === sectionId ? 'block' : 'none';
+        });
+    });
+});

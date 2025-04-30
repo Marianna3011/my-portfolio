@@ -15,6 +15,47 @@ body {
     align-items: center; /* Center the grid container horizontally */
 }
 
+nav {
+    position: static; /* Remove fixed positioning */
+    height: auto; /* Adjust height to fit content */
+    width: 100%; /* Make the menu span the full width */
+    background-color: #FFFFFF; /* White background for the menu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    padding: 1rem; /* Add padding inside the menu */
+    display: flex;
+    justify-content: center; /* Center the menu items horizontally */
+    gap: 1.5rem; /* Add spacing between menu items */
+    z-index: 1000; /* Ensure the menu stays above other elements */
+}
+
+nav ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Arrange menu items horizontally */
+    gap: 1.5rem; /* Add spacing between menu items */
+}
+
+nav ul.menu li {
+    margin: 0; /* Remove vertical spacing */
+}
+
+nav ul.menu a {
+    text-decoration: none;
+    color: #1F2937; /* Near black text */
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul.menu a:hover {
+    color: #F7A8A8; /* Change to pastel pink on hover */
+}
+
+main {
+    margin-left: 0; /* Remove left margin to accommodate the menu */
+}
+
 main {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid */
@@ -103,6 +144,11 @@ header nav a:hover {
     vertical-align: middle; /* Align with the name */
     font-size: 1rem; /* Adjust font size for better alignment */
     color: #6B7280; /* Medium gray text */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+#job-title:hover {
+    transform: scale(1.1); /* Slightly enlarge the job title on hover */
 }
 
 /* Sections */
@@ -286,6 +332,8 @@ footer {
     height: auto; /* Ensure it matches the height of resume buttons */
     min-width: 80px; /* Ensure the button has a consistent width */
     text-align: center; /* Center the text inside the button */
+    text-transform: uppercase; /* Ensure text is always uppercase for consistency */
+    font-weight: bold; /* Make the text bold */
 }
 
 .language-switcher button:hover {
@@ -295,20 +343,17 @@ footer {
 }
 
 /* Adjust specific section sizes */
-#about, #contact {
-    grid-column: span 2; /* Ensure both sections span 2 columns */
-    grid-row: span 1; /* Each spans 1 row */
-    padding: 1.5rem; /* Equal padding */
-    background-color: #FFFFFF; /* Consistent background color */
+#about-contact {
+    grid-column: span 4; /* Make the About Me section span all 4 columns */
+    padding: 3rem; /* Add more padding for consistency with the Skills section */
+    background-color: #FFFFFF; /* Ensure consistent background color */
+    font-family: 'Arial', sans-serif; /* Match the font with the rest of the site */
+    font-size: 1.2rem; /* Adjust font size for consistency */
+    line-height: 1.8; /* Ensure proper spacing */
     color: #1F2937; /* Consistent text color */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
     text-align: center; /* Center content */
-}
-
-#about .download-resume-button {
-    display: inline-flex; /* Ensure buttons are inline and aligned */
-    margin: 0.5rem; /* Add spacing between buttons */
 }
 
 #skills {
@@ -333,4 +378,36 @@ footer {
     grid-column: span 2; /* Span 2 columns */
     grid-row: span 1; /* Span 1 row */
     padding: 1.5rem; /* Shorter height */
+}
+
+#about-title, #contact-title {
+    text-align: center; /* Center the header */
+    width: 100%; /* Ensure the header spans the full width */
+    margin: 0 auto; /* Center the header horizontally */
+    font-size: 2rem; /* Match the font size of the About Me header */
+    margin-bottom: 1rem; /* Add spacing below the header */
+    border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
+    display: inline-block;
+    padding-bottom: 0.5rem; /* Add padding below the text */
+}
+
+#about-text, #contact-text, #experience-text, #hobbies-text {
+    font-size: 1.2rem; /* Increase font size for better readability */
+    line-height: 1.8; /* Adjust line height for better spacing */
+}
+
+.skill-details, .project-card p {
+    font-size: 1.1rem; /* Slightly increase font size for details and project descriptions */
+    line-height: 1.7; /* Adjust line height for consistency */
+}
+
+a {
+    color: #F7A8A8; /* Set link color to pastel pink */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+a:hover {
+    color: #D96C6C; /* Darker pink on hover */
+    text-decoration: underline; /* Add underline on hover */
 }
