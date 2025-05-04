@@ -63,13 +63,16 @@ nav ul.menu li {
     border-radius: 8px; /* Rounded corners for buttons */
     overflow: hidden; /* Prevent content overflow */
     padding: 0.8rem 1.5rem; /* Add consistent padding */
-    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover effects */
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover effects for the box */
+    box-shadow: none; /* Remove any shadow effect */
 }
 
 nav ul.menu li:hover {
     background-color: #D96C6C; /* Darker pink on hover */
-    transform: translateX(-5px) translateY(-5px); /* Slightly move the button */
+    transform: translateX(-5px) translateY(-5px); /* Slightly move the box */
+    box-shadow: none; /* Ensure no shadow on hover */
 }
+
 
 nav ul.menu a {
     appearance: none;
@@ -81,6 +84,7 @@ nav ul.menu a {
     text-decoration: none; /* Remove underline */
     width: 100%; /* Ensure the link spans the full button */
     text-align: center; /* Center the text inside the button */
+    pointer-events: none; /* Disable hover effects on the text */
 }
 
 nav ul.menu a:hover {
@@ -161,8 +165,10 @@ header nav a {
 }
 
 header nav a:hover {
-    text-decoration: underline;
-    border-color: #F7A8A8; /* Change underline to darker pastel pink */
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow on hover */
+    background-color: #F7A8A8; /* Change background to darker pastel pink */
+    color: #1F2937; /* Ensure text remains readable *//* Change underline to darker pastel pink */
 }
 
 #site-title {
@@ -206,12 +212,6 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth movement and shadow effect */
 }
 
-section:hover {
-    transform: translateY(-10px); /* Slight upward movement on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-    transform: scale(1.05);
-    
-}
 
 section h2 {
     text-align: center; /* Center all section headers */
