@@ -16,14 +16,16 @@ body {
 }
 
 nav {
-    position: static; /* Remove fixed positioning */
-    height: auto; /* Adjust height to fit content */
-    width: 100%; /* Make the menu span the full width */
+    position: fixed; /* Fix the menu to the left side */
+    top: 0;
+    left: 0;
+    height: 100%; /* Make the menu span the full height of the viewport */
+    width: 200px; /* Set a fixed width for the menu */
     background-color: #FFFFFF; /* White background for the menu */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    padding: 1rem; /* Add padding inside the menu */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    padding: 2rem 1rem; /* Add padding inside the menu */
     display: flex;
-    justify-content: center; /* Center the menu items horizontally */
+    flex-direction: column; /* Stack menu items vertically */
     gap: 1.5rem; /* Add spacing between menu items */
     z-index: 1000; /* Ensure the menu stays above other elements */
 }
@@ -32,31 +34,47 @@ nav ul.menu {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Arrange menu items horizontally */
+    display: flex;
+    flex-direction: column; /* Stack menu items vertically */
     gap: 1.5rem; /* Add spacing between menu items */
 }
 
 nav ul.menu li {
-    margin: 0; /* Remove vertical spacing */
+    display: inline-flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    background: #d9ebc3;
+     /* Green background for buttons */
+    border-radius: 8px; /* Rounded corners for buttons */
+    overflow: hidden; /* Prevent content overflow */
+    padding: 0.8rem 1.5rem; /* Add consistent padding */
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover effects */
+}
+
+nav ul.menu li:hover {
+    background-color: #D96C6C; /* Darker pink on hover */
+    transform: translateX(-5px) translateY(-5px); /* Slightly move the button */
 }
 
 nav ul.menu a {
-    text-decoration: none;
-    color: #1F2937; /* Near black text */
+    appearance: none;
+    outline: none;
+    font-size: 1.2rem; /* Match your font size */
+    font-family: 'Arial', sans-serif; /* Match your font */
     font-weight: bold;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+    color: #1F2937; /* Update text color */
+    text-decoration: none; /* Remove underline */
+    width: 100%; /* Ensure the link spans the full button */
+    text-align: center; /* Center the text inside the button */
 }
 
 nav ul.menu a:hover {
-    color: #F7A8A8; /* Change to pastel pink on hover */
+    background-color: #D96C6C; /* Darker pink on hover */
+    transform: translateX(-5px) translateY(-5px); /* Slightly move the button */
 }
 
 main {
-    margin-left: 0; /* Remove left margin to accommodate the menu */
-}
-
-main {
+    margin-left: 220px; /* Add space to the left to accommodate the menu */
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid */
     gap: 2rem; /* Space between grid items */
@@ -114,7 +132,7 @@ header nav ul {
 
 /* Header Navigation Links */
 header nav a {
-    color: #000000; /* Black text color for navigation links */
+    color: #1F2937; /* Update text color */
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem; /* Match the size of the job title */
@@ -278,7 +296,7 @@ section h2 {
 /* Footer */
 footer {
     background: #FFFFFF; /* White background for footer */
-    color: #000000; /* Black text color */
+    color: #1F2937; /* Update text color */
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
