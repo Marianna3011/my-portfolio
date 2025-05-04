@@ -23,7 +23,7 @@ body {
     flex-direction: column;
     align-items: center; /* Center the grid container horizontally */
     min-height: 100vh; /* Ensure the body spans the full viewport height */
-    background-color: #FFFFFF; /* Ensure a unified background color */
+    background-color: transparent; /* Remove white background */
 }
 
 header, nav, section, footer, .skill-box, .project-card, .download-resume-button, .language-switcher button {
@@ -136,6 +136,10 @@ header nav {
     display: flex;
     align-items: center; /* Align button vertically with navigation links */
     gap: 1rem; /* Space between the button and navigation links */
+    position: absolute; /* Position the button relative to the viewport */
+    top: 1rem; /* Add spacing from the top */
+    right: 1rem; /* Add spacing from the right */
+    z-index: 1001; /* Ensure it stays above other elements */
 }
 
 header nav ul {
@@ -166,6 +170,8 @@ header nav a:hover {
     margin: 0; /* Remove default margin */
     vertical-align: middle; /* Align with the job title */
     transition: transform 0.3s ease; /* Smooth transition for scaling */
+    font-size: 3rem; /* Increase font size for the name */
+    text-align: center; /* Center align the name */
 }
 
 #site-title:hover {
@@ -176,7 +182,9 @@ header nav a:hover {
     display: inline-block; /* Ensure the job title behaves as a block for alignment */
     margin: 0; /* Remove default margin */
     vertical-align: middle; /* Align with the name */
-    font-size: 1rem; /* Adjust font size for better alignment */
+    font-size: 1.5rem; /* Increase font size for the job title */
+    text-align: center; /* Center align the job title */
+    margin-top: 0.5rem; /* Add spacing below the name */
     color: #6B7280; /* Medium gray text */
     transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
@@ -188,10 +196,12 @@ header nav a:hover {
 /* Sections */
 section {
     padding: 2rem;
-    background-color: #FFFFFF; /* White background for sections */
+    background-color: transparent; /* Remove section background */
     color: #1F2937; /* Near black text color */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
+    box-shadow: none; /* Remove shadow */
+    border: none; /* Remove borders */
+    padding: 2rem 0; /* Adjust padding for spacing */
+    border-radius: 0; /* Remove rounded corners */
     position: relative; /* Ensure sections can move independently */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth movement and shadow effect */
 }
@@ -471,4 +481,10 @@ a:hover {
 .contact-info a:hover {
     color: #D96C6C; /* Darker pink on hover */
     text-decoration: underline; /* Add underline on hover */
+}
+
+#about-contact, #skills, #projects, #experience, #hobbies {
+    background-color: transparent; /* Remove white background */
+    box-shadow: none; /* Remove shadow */
+    border: none; /* Remove borders */
 }
