@@ -66,6 +66,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('hobbies-text').textContent = translation.hobbiesText;
     document.getElementById('skills-title').textContent = translation.skillsTitle;
     document.getElementById('footer-text').textContent = translation.footerText;
+
+    // Ensure only the "about-contact" section is visible initially
+    document.querySelectorAll('main section').forEach(section => {
+        section.style.display = section.id === 'about-contact' ? 'block' : 'none';
+    });
 });
 
 document.getElementById('switch-lang').addEventListener('click', function () {
