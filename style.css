@@ -24,6 +24,7 @@ body {
     align-items: center; /* Center the grid container horizontally */
     min-height: 100vh; /* Ensure the body spans the full viewport height */
     background-color: transparent; /* Remove white background */
+    overflow: hidden; /* Disable scrolling */
 }
 
 header, nav, section, footer, .skill-box, .project-card, .download-resume-button, .language-switcher button {
@@ -43,6 +44,8 @@ nav {
     flex-direction: column; /* Stack menu items vertically */
     gap: 1.5rem; /* Add spacing between menu items */
     z-index: 1000; /* Ensure the menu stays above other elements */
+    justify-content: center; /* Center the menu vertically */
+    border-right: none; /* Remove the right border */
 }
 
 nav ul.menu {
@@ -52,6 +55,17 @@ nav ul.menu {
     display: flex;
     flex-direction: column; /* Stack menu items vertically */
     gap: 1.5rem; /* Add spacing between menu items */
+    position: relative; /* Position the menu list relative for the line */
+}
+
+nav ul.menu::before {
+    content: ''; /* Add a decorative line */
+    position: absolute;
+    left: -4px; /* Position the line to the left of the menu */
+    top: 0; /* Start at the top of the menu */
+    height: 100%; /* Match the height of the menu list */
+    width: 4px; /* Set the width of the line */
+    background-color: #F7A8A8; /* Pink color for the line */
 }
 
 nav ul.menu li {
@@ -63,18 +77,21 @@ nav ul.menu li {
     border-radius: 8px; /* Rounded corners for buttons */
     overflow: hidden; /* Prevent content overflow */
     padding: 0.8rem 1.5rem; /* Add consistent padding */
-    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover effects for the box */
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover effects */
     box-shadow: none; /* Remove any shadow effect */
+    cursor: pointer; /* Make the entire object interactive */
+    background-color: transparent; /* Make the background invisible */
+    border: none; /* Remove borders */
+    transition: color 0.3s ease; /* Smooth text color transition */
 }
 
 nav ul.menu li:hover {
-    background-color: #D96C6C; /* Darker pink on hover */
-    transform: translateX(-5px) translateY(-5px); /* Slightly move the box */
-    box-shadow: none; /* Ensure no shadow on hover */
+    color: #D96C6C; /* Change text color on hover */
+    /* Add underline on hover */
+    transform: scale(1.1);
 }
 
-
-nav ul.menu a {
+nav ul.menu li a {
     appearance: none;
     outline: none;
     font-size: 1.2rem; /* Match your font size */
@@ -84,12 +101,14 @@ nav ul.menu a {
     text-decoration: none; /* Remove underline */
     width: 100%; /* Ensure the link spans the full button */
     text-align: center; /* Center the text inside the button */
-    pointer-events: none; /* Disable hover effects on the text */
+    pointer-events: none; /* Disable pointer events on the text */
+    color: inherit; /* Inherit text color from parent */
+    text-decoration: none; /* Remove underline */
+    pointer-events: none; /* Disable pointer events on the text */
 }
 
-nav ul.menu a:hover {
-    background-color: #D96C6C; /* Darker pink on hover */
-    transform: translateX(-5px) translateY(-5px); /* Slightly move the button */
+nav ul.menu li:hover a {
+    text-decoration: underline; /* Add underline on hover */
 }
 
 main {
@@ -126,7 +145,7 @@ header .container {
     max-width: 1400px; /* Ensure it aligns with the body max-width */
     margin: 0 auto; /* Center the content */
     display: flex;
-    justify-content: space-between; /* Ensure space between site title and right-aligned elements */
+    justify-content: center; /* Center the name horizontally */
     align-items: center; /* Ensure vertical alignment remains consistent */
 }
 
@@ -201,17 +220,21 @@ header nav a:hover {
 
 /* Sections */
 section {
-    padding: 2rem;
-    background-color: transparent; /* Remove section background */
+    padding: 3rem; /* Unified padding for all sections */
+    background-color: #FFFFFF; /* Consistent background color */
     color: #1F2937; /* Near black text color */
-    box-shadow: none; /* Remove shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Unified shadow effect */
     border: none; /* Remove borders */
-    padding: 2rem 0; /* Adjust padding for spacing */
-    border-radius: 0; /* Remove rounded corners */
+    border-radius: 8px; /* Unified border radius */
     position: relative; /* Ensure sections can move independently */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth movement and shadow effect */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Align content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Ensure sections span the full viewport height */
+    text-align: center; /* Center text inside sections */
 }
-
 
 section h2 {
     text-align: center; /* Center all section headers */
@@ -339,21 +362,18 @@ footer {
     align-items: center; /* Vertically align icon and text */
     gap: 0.5rem; /* Add space between the icon and text */
     padding: 0.8rem 1.5rem;
-    background-color: #d9ebc3; /* Update background color to new green */
-    color: #000000; /* Black text color */
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 8px;
-    font-weight: bold;
-    border: 2px solid #6C464E; /* Add burgundy/purple border */
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: transparent; /* Make the background invisible */
+    border: none; /* Remove borders */
+    color: #1F2937; /* Set text color */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Indicate interactivity */
+    transition: color 0.3s ease; /* Smooth text color transition */
 }
 
 .download-resume-button:hover {
-    background-color: #F7A8A8; /* Change background to darker pastel pink */
-    color: #1F2937; /* Ensure text remains readable */
-    transform: translateY(-3px); /* Slight lift on hover */
-    border-color: #6B7280; /* Change border to medium gray */
+    color: #D96C6C; /* Change text color on hover */
+    text-decoration: underline; /* Add underline on hover */
 }
 
 .button-icon {
@@ -365,26 +385,426 @@ footer {
     display: inline-flex; /* Use flexbox for alignment */
     align-items: center; /* Vertically align icon and text */
     gap: 0.5rem; /* Add space between the icon and text */
-    background-color: #d9ebc3; /* Update background color to new green */
-    color: #000000; /* Black text color */
-    border: 2px solid #6C464E; /* Add burgundy/purple border */
-    font-size: 1.2rem; /* Match font size with resume buttons */
-    padding: 0.8rem 1.5rem; /* Match padding with resume buttons */
-    border-radius: 8px; /* Match border radius */
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
-    width: auto; /* Ensure it adjusts to content size */
-    height: auto; /* Ensure it matches the height of resume buttons */
-    min-width: 80px; /* Ensure the button has a consistent width */
-    text-align: center; /* Center the text inside the button */
-    text-transform: uppercase; /* Ensure text is always uppercase for consistency */
-    font-weight: bold; /* Make the text bold */
+    background-color: transparent; /* Make the background invisible */
+    border: none; /* Remove borders */
+    color: #1F2937; /* Set text color */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Indicate interactivity */
+    transition: color 0.3s ease; /* Smooth text color transition */
 }
 
 .language-switcher button:hover {
+    color: #D96C6C; /* Change text color on hover */
+    text-decoration: underline; /* Add underline on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+/* Adjust specific section sizes */
+#about-contact {
+    grid-column: span 4; /* Make the About Me section span all 4 columns */
+    padding: 3rem; /* Add more padding for consistency with the Skills section */
+    background-color: #FFFFFF; /* Ensure consistent background color */
+    font-family: 'Arial', sans-serif; /* Match the font with the rest of the site */
+    font-size: 1.2rem; /* Adjust font size for consistency */
+    line-height: 1.8; /* Ensure proper spacing */
+    color: #1F2937; /* Consistent text color */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
+    text-align: center; /* Center content */
+}
+
+#skills {
+    grid-column: span 4; /* Expand the Skills section to span all columns */
+    grid-row: span 2; /* Increase the height of the Skills section */
+    padding: 3rem; /* Add more padding for a larger section */
+}
+
+#projects {
+    grid-column: span 4; /* Span all 4 columns */
+    grid-row: span 2; /* Span 2 rows */
+    padding: 3rem; /* Make it larger */
+}
+
+#experience {
+    grid-column: span 2; /* Span 2 columns */
+    grid-row: span 1; /* Span 1 row */
+    padding: 1.5rem; /* Shorter height */
+}
+
+#hobbies {
+    grid-column: span 2; /* Span 2 columns */
+    grid-row: span 1; /* Span 1 row */
+    padding: 1.5rem; /* Shorter height */
+}
+
+#about-title, #contact-title {
+    text-align: center; /* Center the header */
+    width: 100%; /* Ensure the header spans the full width */
+    margin: 0 auto; /* Center the header horizontally */
+    font-size: 2rem; /* Match the font size of the About Me header */
+    margin-bottom: 1rem; /* Add spacing below the header */
+    border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
+    display: inline-block;
+    padding-bottom: 0.5rem; /* Add padding below the text */
+}
+
+#about-text, #contact-text, #experience-text, #hobbies-text {
+    font-size: 1.2rem; /* Increase font size for better readability */
+    line-height: 1.8; /* Adjust line height for better spacing */
+}
+
+.skill-details, .project-card p {
+    font-size: 1.1rem; /* Slightly increase font size for details and project descriptions */
+    line-height: 1.7; /* Adjust line height for consistency */
+}
+
+a {
+    color: #F7A8A8; /* Set link color to pastel pink */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+a:hover {
+    color: #D96C6C; /* Darker pink on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Contact Info Styling */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the contact info */
+    gap: 0.5rem; /* Add spacing between items */
+    margin-top: 1rem; /* Add spacing above the contact info */
+}
+
+.contact-info p {
+    margin: 0; /* Remove default margins */
+    font-size: 1.1rem; /* Adjust font size for better readability */
+}
+
+.contact-info a {
+    color: #F7A8A8; /* Match link color with the rest of the site */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.contact-info a:hover {
+    color: #D96C6C; /* Darker pink on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+#about-contact, #skills, #projects, #experience, #hobbies {
+    background-color: transparent; /* Remove white background */
+    box-shadow: none; /* Remove shadow */
+    border: none; /* Remove borders */
+}
+
+nav ul.menu a {
+    appearance: none;
+    outline: none;
+    font-size: 1.2rem; /* Match your font size */
+    font-family: 'Arial', sans-serif; /* Match your font */
+    font-weight: bold;
+    color: #1F2937; /* Update text color */
+    text-decoration: none; /* Remove underline */
+    width: 100%; /* Ensure the link spans the full button */
+    text-align: center; /* Center the text inside the button */
+    pointer-events: none; /* Disable hover effects on the text */
+}
+
+nav ul.menu a:hover {
+    background-color: #D96C6C; /* Darker pink on hover */
+    transform: translateX(-5px) translateY(-5px); /* Slightly move the button */
+}
+
+main {
+    margin-left: 220px; /* Add space to the left to accommodate the menu */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid */
+    gap: 2rem; /* Space between grid items */
+    width: 95%; /* Increase the width of the grid */
+    max-width: 1400px; /* Optional: Set a larger maximum width */
+    margin: 2rem 0; /* Add spacing around the grid */
+    flex: 1; /* Allow the main content to take up available space */
+}
+
+/* Header */
+header {
+    background: transparent; /* Make the header background transparent */
+    color: #000000; /* Black text color */
+    height: 110px; /* Slightly increase the height of the header */
+    padding: 0.4rem 1rem; /* Adjust padding for better spacing */
+    display: flex;
+    align-items: center; /* Ensure content is vertically aligned */
+    overflow: hidden; /* Prevent content from overflowing */
+    justify-content: center; /* Center the container horizontally */
+    width: 100%; /* Make the header span the full width */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    position: sticky; /* Make the header stick to the top */
+    top: 0; /* Align it to the top of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: none; /* Remove the shadow */
+}
+
+header .container {
+    width: 95%; /* Match the width of the body */
+    max-width: 1400px; /* Ensure it aligns with the body max-width */
+    margin: 0 auto; /* Center the content */
+    display: flex;
+    justify-content: center; /* Center the name horizontally */
+    align-items: center; /* Ensure vertical alignment remains consistent */
+}
+
+header nav {
+    display: flex;
+    align-items: center; /* Align navigation links vertically */
+    gap: 1rem; /* Space between navigation links */
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center; /* Align button vertically with navigation links */
+    gap: 1rem; /* Space between the button and navigation links */
+    position: absolute; /* Position the button relative to the viewport */
+    top: 1rem; /* Add spacing from the top */
+    right: 1rem; /* Add spacing from the right */
+    z-index: 1001; /* Ensure it stays above other elements */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Header Navigation Links */
+header nav a {
+    color: #1F2937; /* Update text color */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem; /* Match the size of the job title */
+    border-bottom: 2px solid transparent; /* Add underline effect */
+    transition: border-color 0.3s ease;
+}
+
+header nav a:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow on hover */
+    background-color: #F7A8A8; /* Change background to darker pastel pink */
+    color: #1F2937; /* Ensure text remains readable *//* Change underline to darker pastel pink */
+}
+
+#site-title {
+    display: inline-block; /* Ensure the name behaves as a block for alignment */
+    margin: 0; /* Remove default margin */
+    vertical-align: middle; /* Align with the job title */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    font-size: 3rem; /* Increase font size for the name */
+    text-align: center; /* Center align the name */
+}
+
+#site-title:hover {
+    transform: scale(1.2); /* Enlarge the name slightly on hover */
+}
+
+#job-title {
+    display: inline-block; /* Ensure the job title behaves as a block for alignment */
+    margin: 0; /* Remove default margin */
+    vertical-align: middle; /* Align with the name */
+    font-size: 1.5rem; /* Increase font size for the job title */
+    text-align: center; /* Center align the job title */
+    margin-top: 0.5rem; /* Add spacing below the name */
+    color: #6B7280; /* Medium gray text */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+#job-title:hover {
+    transform: scale(1.1); /* Slightly enlarge the job title on hover */
+}
+
+/* Sections */
+section {
+    padding: 3rem; /* Unified padding for all sections */
+    background-color: #FFFFFF; /* Consistent background color */
+    color: #1F2937; /* Near black text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Unified shadow effect */
+    border: none; /* Remove borders */
+    border-radius: 8px; /* Unified border radius */
+    position: relative; /* Ensure sections can move independently */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth movement and shadow effect */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Align content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Ensure sections span the full viewport height */
+    text-align: center; /* Center text inside sections */
+}
+
+section h2 {
+    text-align: center; /* Center all section headers */
+    width: 100%; /* Ensure the header spans the full width */
+    margin: 0 auto; /* Center the header horizontally */
+    font-size: 2rem; /* Increase font size */
+    margin-bottom: 1rem; /* Add spacing below the header */
+    border-bottom: 4px solid #F7A8A8; /* Change underline to darker pastel pink */
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr)); /* Ensure cards fit within the section */
+    justify-content: center; /* Center the entire grid */
+    padding: 2rem 0; /* Add more padding for better spacing */
+}
+
+.skill-box {
+    position: relative; /* Position relative for hover effect */
+    background: #d9ebc3; /* Keep the green background for skill cards */
+    color: #0A0F0A; /* Dark green/black text */
+    padding: 2.5rem; /* Increase padding for larger cards */
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+    margin-bottom: 2.5rem; /* Add a bit more spacing between cards */
+    cursor: pointer; /* Indicate interactivity */
+    overflow: hidden; /* Prevent content overflow during expansion */
+    width: 170px; /* Slightly reduce the width */
+    height: 210px; /* Slightly reduce the height */
+    display: flex; /* Center content inside the card */
+    flex-direction: column; /* Align content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.skill-box:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow on hover */
     background-color: #F7A8A8; /* Change background to darker pastel pink */
     color: #1F2937; /* Ensure text remains readable */
+}
+
+.skill-box:hover .skill-title {
+    transform: translateY(-10px); /* Move the title up slightly */
+    transition: transform 0.3s ease; /* Smooth transition for movement */
+    font-size: 1.8rem; /* Keep the font size consistent */
+    margin-bottom: 0.5rem; /* Reduce spacing below the title */
+}
+
+.skill-title {
+    font-size: 1.8rem; /* Increase the default size for the main title */
+    margin-bottom: 0.5rem; /* Reduce spacing below the title */
+    transition: font-size 0.3s ease, margin-bottom 0.3s ease; /* Smooth transition for resizing */
+}
+
+.skill-details {
+    display: none; /* Hide the detailed skills by default */
+    margin-top: 0.3rem; /* Reduce spacing above the details */
+    text-align: left; /* Align details to the left */
+    font-size: 1.1rem; /* Slightly larger font for details */
+    color: #1F2937; /* Consistent text color */
+    transition: opacity 0.3s ease, max-height 0.3s ease; /* Smooth fade-in and height expansion */
+    max-height: 0; /* Collapse the details initially */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.skill-box:hover .skill-details {
+    display: block; /* Show detailed skills only for the hovered card */
+    opacity: 1; /* Ensure smooth visibility */
+    max-height: 200px; /* Smoothly expand the height */
+}
+
+.skill-box:nth-child(n+6) {
+    grid-column: span 1; /* Ensure each card spans one column */
+    grid-row: 2; /* Place these cards in the second row */
+    margin-top: -1rem; /* Adjust vertical alignment slightly */
+    transform: translateX(50%); /* Offset cards to align with spaces above */
+}
+
+/* Project and Case Study Cards */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.project-card {
+    background: #d9ebc3; /* Update background color to new green */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #1F2937; /* Near black text color */
+}
+
+.project-card:hover {
+    background-color: #F7A8A8; /* Change background to darker pastel pink */
+    color: #1F2937; /* Ensure text remains readable */
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Footer */
+footer {
+    background: transparent; /* Make the footer background transparent */
+    color: #1F2937; /* Update text color */
+    text-align: center; /* Center the text */
+    padding: 1.5rem; /* Add more padding for better spacing */
+    margin-top: 0; /* Remove spacing above the footer */
+    position: relative; /* Ensure proper positioning */
+    bottom: 0; /* Align to the bottom */
+    width: 100%; /* Make it span the full width */
+    box-shadow: none; /* Remove the shadow */
+    font-size: 1rem; /* Adjust font size for readability */
+}
+
+/* Resume Button */
+.download-resume-button {
+    display: inline-flex; /* Use flexbox for icon and text alignment */
+    align-items: center; /* Vertically align icon and text */
+    gap: 0.5rem; /* Add space between the icon and text */
+    padding: 0.8rem 1.5rem;
+    background-color: transparent; /* Make the background invisible */
+    border: none; /* Remove borders */
+    color: #1F2937; /* Set text color */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Indicate interactivity */
+    transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+.download-resume-button:hover {
+    color: #D96C6C; /* Change text color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.button-icon {
+    font-size: 1.5rem; /* Adjust icon size */
+}
+
+/* Translation Button */
+.language-switcher button {
+    display: inline-flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align icon and text */
+    gap: 0.5rem; /* Add space between the icon and text */
+    background-color: transparent; /* Make the background invisible */
+    border: none; /* Remove borders */
+    color: #1F2937; /* Set text color */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    cursor: pointer; /* Indicate interactivity */
+    transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+.language-switcher button:hover {
+    color: #D96C6C; /* Change text color on hover */
+     /* Add underline on hover */
     transform: scale(1.1); /* Slightly enlarge the button on hover */
 }
 

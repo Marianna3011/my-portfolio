@@ -92,10 +92,9 @@ document.getElementById('switch-lang').addEventListener('click', function () {
     document.getElementById('footer-text').textContent = translation.footerText;
 });
 
-document.querySelectorAll('nav ul.menu a').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const sectionId = this.getAttribute('data-section');
+document.querySelectorAll('nav ul.menu li').forEach(item => {
+    item.addEventListener('click', function () {
+        const sectionId = this.querySelector('a').getAttribute('data-section');
         document.querySelectorAll('main section').forEach(section => {
             section.style.display = section.id === sectionId ? 'block' : 'none';
         });
