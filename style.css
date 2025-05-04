@@ -22,6 +22,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the grid container horizontally */
+    min-height: 100vh; /* Ensure the body spans the full viewport height */
+    background-color: #FFFFFF; /* Ensure a unified background color */
 }
 
 header, nav, section, footer, .skill-box, .project-card, .download-resume-button, .language-switcher button {
@@ -34,8 +36,8 @@ nav {
     left: 0;
     height: 100%; /* Make the menu span the full height of the viewport */
     width: 200px; /* Set a fixed width for the menu */
-    background-color: #FFFFFF; /* White background for the menu */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background: transparent; /* Make the menu background transparent */
+    box-shadow: none; /* Remove the shadow */
     padding: 2rem 1rem; /* Add padding inside the menu */
     display: flex;
     flex-direction: column; /* Stack menu items vertically */
@@ -75,15 +77,10 @@ nav ul.menu a {
     font-size: 1.2rem; /* Match your font size */
     font-family: 'Arial', sans-serif; /* Match your font */
     font-weight: bold;
-<<<<<<< HEAD
     color: #1F2937; /* Update text color */
     text-decoration: none; /* Remove underline */
     width: 100%; /* Ensure the link spans the full button */
     text-align: center; /* Center the text inside the button */
-=======
-    font-size: 1.2rem;
-transition: color 0.3s ease;
->>>>>>> f5978630e468d9cb33704beee18968b356b93e77
 }
 
 nav ul.menu a:hover {
@@ -99,11 +96,12 @@ main {
     width: 95%; /* Increase the width of the grid */
     max-width: 1400px; /* Optional: Set a larger maximum width */
     margin: 2rem 0; /* Add spacing around the grid */
+    flex: 1; /* Allow the main content to take up available space */
 }
 
 /* Header */
 header {
-    background: #FFFFFF; /* White background for header */
+    background: transparent; /* Make the header background transparent */
     color: #000000; /* Black text color */
     height: 110px; /* Slightly increase the height of the header */
     padding: 0.4rem 1rem; /* Adjust padding for better spacing */
@@ -116,7 +114,7 @@ header {
     position: sticky; /* Make the header stick to the top */
     top: 0; /* Align it to the top of the viewport */
     z-index: 1000; /* Ensure it stays above other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+    box-shadow: none; /* Remove the shadow */
 }
 
 header .container {
@@ -313,14 +311,16 @@ section h2 {
 
 /* Footer */
 footer {
-    background: #FFFFFF; /* White background for footer */
+    background: transparent; /* Make the footer background transparent */
     color: #1F2937; /* Update text color */
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    position: flex;
-    bottom: 0;
-    width: 100%;
+    text-align: center; /* Center the text */
+    padding: 1.5rem; /* Add more padding for better spacing */
+    margin-top: 0; /* Remove spacing above the footer */
+    position: relative; /* Ensure proper positioning */
+    bottom: 0; /* Align to the bottom */
+    width: 100%; /* Make it span the full width */
+    box-shadow: none; /* Remove the shadow */
+    font-size: 1rem; /* Adjust font size for readability */
 }
 
 /* Resume Button */
