@@ -370,15 +370,19 @@ section h2 {
 
 /* Footer */
 footer {
-    background: transparent; /* Make the footer background transparent */
-    color: #1F2937; /* Update text color */
-    text-align: center; /* Center the text */
-    padding: 1.5rem; /* Add more padding for better spacing */
-    margin-top: 0; /* Remove spacing above the footer */
-    position: relative; /* Ensure proper positioning */
-    bottom: 0; /* Align to the bottom */
-    width: 100%; /* Make it span the full width */
-    box-shadow: none; /* Remove the shadow */
+    background: transparent; /* Invisible background */
+    color: #1F2937; /* Text color */
+    height: 80px; /* Slightly smaller height than the header */
+    padding: 0.4rem 1rem; /* Adjust padding for better spacing */
+    display: flex;
+    align-items: center; /* Vertically align content */
+    justify-content: center; /* Center content horizontally */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: sticky; /* Stick to the bottom */
+    bottom: 0; /* Align to the bottom of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: none; /* No shadow */
     font-size: 1rem; /* Adjust font size for readability */
 }
 
@@ -811,15 +815,19 @@ section h2 {
 
 /* Footer */
 footer {
-    background: transparent; /* Make the footer background transparent */
-    color: #1F2937; /* Update text color */
-    text-align: center; /* Center the text */
-    padding: 1.5rem; /* Add more padding for better spacing */
-    margin-top: 0; /* Remove spacing above the footer */
-    position: relative; /* Ensure proper positioning */
-    bottom: 0; /* Align to the bottom */
-    width: 100%; /* Make it span the full width */
-    box-shadow: none; /* Remove the shadow */
+    background: transparent; /* Invisible background */
+    color: #1F2937; /* Text color */
+    height: 80px; /* Slightly smaller height than the header */
+    padding: 0.4rem 1rem; /* Adjust padding for better spacing */
+    display: flex;
+    align-items: center; /* Vertically align content */
+    justify-content: center; /* Center content horizontally */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: sticky; /* Stick to the bottom */
+    bottom: 0; /* Align to the bottom of the viewport */
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: none; /* No shadow */
     font-size: 1rem; /* Adjust font size for readability */
 }
 
