@@ -19,7 +19,7 @@ const translations = {
         hobbiesTitle: "Hobbies",
         hobbiesText: "In my free time, I enjoy hiking, photography, and exploring new technologies. These activities help me stay creative and energized.",
         skillsTitle: "Skills",
-        jobTitle: "Poznan University of Technology AI student | Aspiring Data Analyst | AI & Data Enthusiast",
+        jobTitle: "Aspiring Data Analyst",
         footerText: "© 2025 Marianna Myszkowska. All rights reserved."
     },
     pl: {
@@ -42,7 +42,7 @@ const translations = {
         hobbiesTitle: "Hobby",
         hobbiesText: "W wolnym czasie lubię wędrówki, fotografię i odkrywanie nowych technologii. Te aktywności pomagają mi zachować kreatywność i energię.",
         skillsTitle: "Umiejętności",
-        jobTitle: "Studentka sztucznej inteligencji na Politechnice Poznańskiej | Aspirująca analityczka danych | Entuzjastka AI i danych",
+        jobTitle: "Aspirująca analityczka danych ",
         footerText: "© 2025 Marianna Myszkowska. Wszelkie prawa zastrzeżone."
     }
 };
