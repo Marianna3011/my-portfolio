@@ -452,6 +452,13 @@ footer {
     font-size: inherit; /* Ensure consistency with the rest of the about-contact section */
 }
 
+#about-contact p#contact-text:first-of-type {
+    border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
+    display: inline-block;
+    padding-bottom: 0.5rem; /* Add padding below the text */
+    margin-bottom: 1rem; /* Add spacing below the header */
+}
+
 #skills {
     grid-column: span 4; /* Expand the Skills section to span all columns */
     grid-row: span 2; /* Increase the height of the Skills section */
@@ -485,6 +492,16 @@ footer {
     border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
     display: inline-block;
     padding-bottom: 0.5rem; /* Add padding below the text */
+}
+
+#about-title {
+    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Match nav ul.menu font */
+    font-size: 1.2rem; /* Match nav ul.menu font size */
+    font-weight: bold; /* Match nav ul.menu font weight */
+    color: #1F2937; /* Match nav ul.menu text color */
+    text-align: center; /* Center align the text */
+    text-decoration: none; /* Remove underline */
+    margin-bottom: 1rem; /* Add spacing below */
 }
 
 #about-text, #contact-text, #experience-text, #hobbies-text {
@@ -876,6 +893,13 @@ footer {
     font-size: inherit; /* Ensure consistency with the rest of the about-contact section */
 }
 
+#about-contact p#contact-text:first-of-type {
+    border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
+    display: inline-block;
+    padding-bottom: 0.5rem; /* Add padding below the text */
+    margin-bottom: 1rem; /* Add spacing below the header */
+}
+
 #skills {
     grid-column: span 4; /* Expand the Skills section to span all columns */
     grid-row: span 2; /* Increase the height of the Skills section */
@@ -909,6 +933,16 @@ footer {
     border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
     display: inline-block;
     padding-bottom: 0.5rem; /* Add padding below the text */
+}
+
+#about-title {
+    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Match nav ul.menu font */
+    font-size: 1.2rem; /* Match nav ul.menu font size */
+    font-weight: bold; /* Match nav ul.menu font weight */
+    color: #1F2937; /* Match nav ul.menu text color */
+    text-align: center; /* Center align the text */
+    text-decoration: none; /* Remove underline */
+    margin-bottom: 1rem; /* Add spacing below */
 }
 
 #about-text, #contact-text, #experience-text, #hobbies-text {
