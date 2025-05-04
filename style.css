@@ -1,19 +1,39 @@
-/* Import the Roboto font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+/* Import the DM Serif Display font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+/* Import the Bebas Neue font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* Apply the font and text color to all elements */
 * {
-    font-family: 'Roboto', 'Arial', sans-serif; /* Use Roboto as the primary font */
+    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Apply DM Serif Display globally */
     color: #45334b; /* Set global text color */
+    font-size: 1.5rem;  /* Increase the base font size */
+}
+
+h1, h2, h3 {
+    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Apply DM Serif Display to headings */
+}
+
+h1 {
+    font-size: 4rem; /* Increase the size of main headings */
+}
+
+h2 {
+    font-size: 1.5rem; /* Increase the size of section headings */
+}
+
+h3 {
+    font-size: 2rem; /* Increase the size of subheadings */
 }
 
 /* General styles */
 body {
-    font-family: 'Roboto', 'Arial', sans-serif; /* Use Roboto as the primary font */
+    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Use DM Serif Display as the primary font */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-image: url('images/background.jpg'); /* Set background image */
+    background-image: url('images/background.png'); /* Set background image */
     background-size: cover; /* Ensure the image covers the entire background */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -28,11 +48,12 @@ body {
 }
 
 header, nav, section, footer, .skill-box, .project-card, .download-resume-button, .language-switcher button {
-    font-family: 'Roboto', 'Arial', sans-serif; /* Apply Roboto to key elements */
+    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Apply DM Serif Display to key elements */
 }
 
 nav {
     position: fixed; /* Fix the menu to the left side */
+    font-family: 'DM Serif Display', 'Arial', sans-serif;
     top: 0;
     left: 0;
     height: 100%; /* Make the menu span the full height of the viewport */
@@ -49,6 +70,7 @@ nav {
 }
 
 nav ul.menu {
+    font-family: 'DM Serif Display', 'Arial', sans-serif;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -59,6 +81,7 @@ nav ul.menu {
 }
 
 nav ul.menu::before {
+    font-family: 'DM Serif Display', 'Arial', sans-serif;
     content: ''; /* Add a decorative line */
     position: absolute;
     left: -4px; /* Position the line to the left of the menu */
@@ -69,6 +92,7 @@ nav ul.menu::before {
 }
 
 nav ul.menu li {
+    font-family: 'DM Serif Display', 'Arial', sans-serif;
     display: inline-flex;
     align-items: center; /* Center text vertically */
     justify-content: center; /* Center text horizontally */
@@ -86,16 +110,18 @@ nav ul.menu li {
 }
 
 nav ul.menu li:hover {
+    font-family: 'DM Serif Display', 'Arial', sans-serif;
     color: #D96C6C; /* Change text color on hover */
     /* Add underline on hover */
     transform: scale(1.1);
 }
 
 nav ul.menu li a {
+    font-family: 'DM Serif Display', 'Arial', sans-serif;
     appearance: none;
     outline: none;
     font-size: 1.2rem; /* Match your font size */
-    font-family: 'Arial', sans-serif; /* Match your font */
+     /* Match your font */
     font-weight: bold;
     color: #1F2937; /* Update text color */
     text-decoration: none; /* Remove underline */
@@ -240,7 +266,7 @@ section h2 {
     text-align: center; /* Center all section headers */
     width: 100%; /* Ensure the header spans the full width */
     margin: 0 auto; /* Center the header horizontally */
-    font-size: 2rem; /* Increase font size */
+    font-size: 1.2rem; /* Match the font size of menu items */
     margin-bottom: 1rem; /* Add spacing below the header */
     border-bottom: 4px solid #F7A8A8; /* Change underline to darker pastel pink */
     display: inline-block;
@@ -259,13 +285,13 @@ section h2 {
     position: relative; /* Position relative for hover effect */
     background: #d9ebc3; /* Keep the green background for skill cards */
     color: #0A0F0A; /* Dark green/black text */
-    padding: 2.5rem; /* Increase padding for larger cards */
+    padding: 1.5rem; /* Increase padding for larger cards */
     text-align: center;
     border-radius: 8px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
-    margin-bottom: 2.5rem; /* Add a bit more spacing between cards */
+    margin-bottom: 1.5rem; /* Add a bit more spacing between cards */
     cursor: pointer; /* Indicate interactivity */
     overflow: hidden; /* Prevent content overflow during expansion */
     width: 170px; /* Slightly reduce the width */
@@ -405,13 +431,25 @@ footer {
     grid-column: span 4; /* Make the About Me section span all 4 columns */
     padding: 3rem; /* Add more padding for consistency with the Skills section */
     background-color: #FFFFFF; /* Ensure consistent background color */
-    font-family: 'Arial', sans-serif; /* Match the font with the rest of the site */
-    font-size: 1.2rem; /* Adjust font size for consistency */
+     /* Match the font with the rest of the site */
+    font-size: 1rem; /* Reduce font size for the entire section */
     line-height: 1.8; /* Ensure proper spacing */
     color: #1F2937; /* Consistent text color */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
     text-align: center; /* Center content */
+}
+
+#about-contact h2, 
+#about-contact p, 
+#about-contact .contact-info p, 
+#about-contact a {
+    font-size: inherit; /* Ensure all elements inherit the reduced font size */
+}
+
+#about-contact .contact-info p, 
+#about-contact .contact-info a {
+    font-size: inherit; /* Ensure consistency with the rest of the about-contact section */
 }
 
 #skills {
@@ -442,7 +480,7 @@ footer {
     text-align: center; /* Center the header */
     width: 100%; /* Ensure the header spans the full width */
     margin: 0 auto; /* Center the header horizontally */
-    font-size: 2rem; /* Match the font size of the About Me header */
+    font-size: 1.2rem; /* Match the font size of the contact text */
     margin-bottom: 1rem; /* Add spacing below the header */
     border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
     display: inline-block;
@@ -457,6 +495,10 @@ footer {
 .skill-details, .project-card p {
     font-size: 1.1rem; /* Slightly increase font size for details and project descriptions */
     line-height: 1.7; /* Adjust line height for consistency */
+}
+
+p, a, span {
+    font-size: 1.4rem; /* Increase the size of paragraph text and links */
 }
 
 a {
@@ -505,7 +547,7 @@ nav ul.menu a {
     appearance: none;
     outline: none;
     font-size: 1.2rem; /* Match your font size */
-    font-family: 'Arial', sans-serif; /* Match your font */
+     /* Match your font */
     font-weight: bold;
     color: #1F2937; /* Update text color */
     text-decoration: none; /* Remove underline */
@@ -648,7 +690,7 @@ section h2 {
     text-align: center; /* Center all section headers */
     width: 100%; /* Ensure the header spans the full width */
     margin: 0 auto; /* Center the header horizontally */
-    font-size: 2rem; /* Increase font size */
+    font-size: 1.2rem; /* Match the font size of menu items */
     margin-bottom: 1rem; /* Add spacing below the header */
     border-bottom: 4px solid #F7A8A8; /* Change underline to darker pastel pink */
     display: inline-block;
@@ -667,13 +709,13 @@ section h2 {
     position: relative; /* Position relative for hover effect */
     background: #d9ebc3; /* Keep the green background for skill cards */
     color: #0A0F0A; /* Dark green/black text */
-    padding: 2.5rem; /* Increase padding for larger cards */
+    padding: 1.5rem; /* Increase padding for larger cards */
     text-align: center;
     border-radius: 8px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
-    margin-bottom: 2.5rem; /* Add a bit more spacing between cards */
+    margin-bottom: 1.5rem; /* Add a bit more spacing between cards */
     cursor: pointer; /* Indicate interactivity */
     overflow: hidden; /* Prevent content overflow during expansion */
     width: 170px; /* Slightly reduce the width */
@@ -804,7 +846,7 @@ footer {
 
 .language-switcher button:hover {
     color: #D96C6C; /* Change text color on hover */
-     /* Add underline on hover */
+    text-decoration: underline; /* Add underline on hover */
     transform: scale(1.1); /* Slightly enlarge the button on hover */
 }
 
@@ -813,13 +855,25 @@ footer {
     grid-column: span 4; /* Make the About Me section span all 4 columns */
     padding: 3rem; /* Add more padding for consistency with the Skills section */
     background-color: #FFFFFF; /* Ensure consistent background color */
-    font-family: 'Arial', sans-serif; /* Match the font with the rest of the site */
-    font-size: 1.2rem; /* Adjust font size for consistency */
+     /* Match the font with the rest of the site */
+    font-size: 1rem; /* Reduce font size for the entire section */
     line-height: 1.8; /* Ensure proper spacing */
     color: #1F2937; /* Consistent text color */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
     text-align: center; /* Center content */
+}
+
+#about-contact h2, 
+#about-contact p, 
+#about-contact .contact-info p, 
+#about-contact a {
+    font-size: inherit; /* Ensure all elements inherit the reduced font size */
+}
+
+#about-contact .contact-info p, 
+#about-contact .contact-info a {
+    font-size: inherit; /* Ensure consistency with the rest of the about-contact section */
 }
 
 #skills {
@@ -850,7 +904,7 @@ footer {
     text-align: center; /* Center the header */
     width: 100%; /* Ensure the header spans the full width */
     margin: 0 auto; /* Center the header horizontally */
-    font-size: 2rem; /* Match the font size of the About Me header */
+    font-size: 1.2rem; /* Match the font size of the contact text */
     margin-bottom: 1rem; /* Add spacing below the header */
     border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
     display: inline-block;
@@ -865,6 +919,10 @@ footer {
 .skill-details, .project-card p {
     font-size: 1.1rem; /* Slightly increase font size for details and project descriptions */
     line-height: 1.7; /* Adjust line height for consistency */
+}
+
+p, a, span {
+    font-size: 1.4rem; /* Increase the size of paragraph text and links */
 }
 
 a {
