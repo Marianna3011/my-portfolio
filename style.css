@@ -65,7 +65,7 @@ nav {
     display: flex;
     flex-direction: column; /* Stack menu items vertically */
     gap: 1.5rem; /* Add spacing between menu items */
-    z-index: 1000; /* Ensure the menu stays above other elements */
+    z-index: 1001; /* Ensure the menu stays above other elements */
     justify-content: center; /* Center the menu vertically */
     border-right: none; /* Remove the right border */
 }
@@ -173,6 +173,7 @@ header {
     top: 0; /* Align it to the top of the viewport */
     z-index: 1000; /* Ensure it stays above other elements */
     box-shadow: none; /* Remove the shadow */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition for hiding */
 }
 
 header .container {
@@ -397,6 +398,7 @@ footer {
     z-index: 1000; /* Ensure it stays above other elements */
     box-shadow: none; /* No shadow */
     font-size: 0.8rem; /* Footer-specific font size */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition for hiding */
 }
 
 /* Resume Button */
@@ -598,6 +600,19 @@ a:hover {
     background-color: transparent; /* Remove white background */
     box-shadow: none; /* Remove shadow */
     border: none; /* Remove borders */
+}
+
+header, footer {
+    background-color: transparent; /* Make the background completely invisible */
+    box-shadow: none; /* Remove any shadow */
+    border: none; /* Remove any borders */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition for hiding */
+}
+
+header.hidden, footer.hidden {
+    opacity: 0; /* Make header and footer invisible */
+    visibility: hidden; /* Prevent interaction when hidden */
+    pointer-events: none; /* Disable pointer events when hidden */
 }
 
 nav ul.menu a {
