@@ -19,6 +19,15 @@ const translations = {
         hobbiesTitle: "Hobbies",
         hobbiesText: "In my free time, I enjoy hiking, photography, and exploring new technologies. These activities help me stay creative and energized.",
         skillsTitle: "Skills",
+        skills: [
+            { title: "Programming", details: ["Python (pandas, numpy, matplotlib, seaborn, scikit-learn)", "SQL", "Git"] },
+            { title: "Data Analysis", details: ["Exploratory Data Analysis (EDA)", "Data Cleaning", "Hypothesis Testing", "Regression Analysis", "Classification", "Clustering", "Feature Engineering", "Model Evaluation Metrics (Accuracy, Precision, Recall, F1, ROC-AUC)"] },
+            { title: "Visualization", details: ["Seaborn", "Matplotlib", "Plotly", "Excel (Pivot Tables, Charts)"] },
+            { title: "Tools", details: ["Jupyter Notebooks", "Google Colab", "GitHub", "Visual Studio Code", "Command Line", "Docker (Basic)", "LaTeX"] },
+            { title: "Web & Data Access", details: ["APIs (REST, JSON)", "Web Scraping (BeautifulSoup, requests, Selenium)"] },
+            { title: "Machine Learning", details: ["Supervised and Unsupervised Learning", "Cross-Validation", "Hyperparameter Tuning (GridSearchCV, RandomizedSearchCV)"] },
+            { title: "Soft Skills", details: ["Data Storytelling", "Problem Solving", "Communication", "Teamwork"] }
+        ],
         jobTitle: "Aspiring Data Analyst",
         footerText: "© 2025 Marianna Myszkowska. All rights reserved."
     }
@@ -41,6 +50,29 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('hobbies-text').textContent = translation.hobbiesText;
     document.getElementById('skills-title').textContent = translation.skillsTitle;
     document.getElementById('footer-text').textContent = translation.footerText;
+
+    const skillsGrid = document.querySelector('.skills-grid');
+    skillsGrid.innerHTML = ''; // Clear existing content
+    translation.skills.forEach(skill => {
+        const skillBox = document.createElement('div');
+        skillBox.className = 'skill-box';
+
+        const skillTitle = document.createElement('div');
+        skillTitle.className = 'skill-title';
+        skillTitle.textContent = skill.title;
+
+        const skillDetails = document.createElement('div');
+        skillDetails.className = 'skill-details';
+        skill.details.forEach(detail => {
+            const detailSpan = document.createElement('span');
+            detailSpan.textContent = detail;
+            skillDetails.appendChild(detailSpan);
+        });
+
+        skillBox.appendChild(skillTitle);
+        skillBox.appendChild(skillDetails);
+        skillsGrid.appendChild(skillBox);
+    });
 
     // Ensure only the "about-contact" section is visible initially
     document.querySelectorAll('main section').forEach(section => {

@@ -42,9 +42,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the grid container horizontally */
-    min-height: 100vh; /* Ensure the body spans the full viewport height */
+    min-height: auto; /* Remove fixed height constraint */
     background-color: transparent; /* Remove white background */
-    overflow: hidden; /* Disable scrolling */
+    overflow: auto; /* Enable scrolling to ensure all content is visible */
     font-size: 20px; /* Set a base font size for the entire document */
 }
 
@@ -267,7 +267,7 @@ section {
     flex-direction: column; /* Align content vertically */
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
-    min-height: 100vh; /* Ensure sections span the full viewport height */
+    min-height: auto; /* Allow sections to adjust height dynamically */
     text-align: center; /* Center text inside sections */
     flex: 0; /* Prevent sections from growing unnecessarily */
     margin: 0; /* Remove unnecessary margins */
@@ -294,74 +294,38 @@ section h2 {
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(150px, 1fr)); /* Ensure cards fit within the section */
-    justify-content: center; /* Center the entire grid */
-    padding: 2rem 0; /* Add more padding for better spacing */
+    grid-template-columns: repeat(2, 1fr); /* Set grid to two columns */
+    gap: 2rem; /* Add spacing between skill cards */
+    justify-content: center; /* Center the grid */
+    padding: 2rem; /* Add padding around the grid */
 }
 
 .skill-box {
-    position: relative; /* Position relative for hover effect */
-    background: #d9ebc3; /* Keep the green background for skill cards */
-    color: #0A0F0A; /* Dark green/black text */
-    padding: 1.5rem; /* Increase padding for larger cards */
-    text-align: center;
-    border-radius: 8px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
-    margin-bottom: 1.5rem; /* Add a bit more spacing between cards */
-    cursor: pointer; /* Indicate interactivity */
-    overflow: hidden; /* Prevent content overflow during expansion */
-    width: 170px; /* Slightly reduce the width */
-    height: 210px; /* Slightly reduce the height */
-    display: flex; /* Center content inside the card */
-    flex-direction: column; /* Align content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    background: transparent; /* Add a light background for separation */
+    border: none; /* Add a subtle border */
+    border-radius: 8px; /* Round the corners */
+    padding: 1.5rem; /* Add padding inside the card */
+    text-align: center; /* Center-align text */ /* Add a subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add smooth hover effects */
 }
 
-.skill-box:hover {
-    transform: scale(1.05); /* Slightly increase the size on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow on hover */
-    background-color: #F7A8A8; /* Change background to darker pastel pink */
-    color: #1F2937; /* Ensure text remains readable */
-}
 
-.skill-box:hover .skill-title {
-    transform: translateY(-10px); /* Move the title up slightly */
-    transition: transform 0.3s ease; /* Smooth transition for movement */
-    font-size: 1.8rem; /* Keep the font size consistent */
-    margin-bottom: 0.5rem; /* Reduce spacing below the title */
+.skill-box:last-child {
+    grid-column: span 2; /* Make the last card span two columns */
+    justify-self: center; /* Center the last card horizontally */
 }
 
 .skill-title {
-    font-size: 1.8rem; /* Increase the default size for the main title */
-    margin-bottom: 0.5rem; /* Reduce spacing below the title */
-    transition: font-size 0.3s ease, margin-bottom 0.3s ease; /* Smooth transition for resizing */
+    font-size: 1.5rem; /* Increase font size for titles */
+    font-weight: bold; /* Make titles bold */
+    margin-bottom: 1rem; /* Add spacing below the title */
 }
 
-.skill-details {
-    display: none; /* Hide the detailed skills by default */
-    margin-top: 0.3rem; /* Reduce spacing above the details */
-    text-align: left; /* Align details to the left */
-    font-size: 1.1rem; /* Slightly larger font for details */
-    color: #1F2937; /* Consistent text color */
-    transition: opacity 0.3s ease, max-height 0.3s ease; /* Smooth fade-in and height expansion */
-    max-height: 0; /* Collapse the details initially */
-    overflow: hidden; /* Prevent content overflow */
-}
-
-.skill-box:hover .skill-details {
-    display: block; /* Show detailed skills only for the hovered card */
-    opacity: 1; /* Ensure smooth visibility */
-    max-height: 200px; /* Smoothly expand the height */
-}
-
-.skill-box:nth-child(n+6) {
-    grid-column: span 1; /* Ensure each card spans one column */
-    grid-row: 2; /* Place these cards in the second row */
-    margin-top: -1rem; /* Adjust vertical alignment slightly */
-    transform: translateX(50%); /* Offset cards to align with spaces above */
+.skill-details span {
+    display: block; /* Display each detail on a new line */
+    font-size: 1rem; /* Adjust font size for details */
+    color: #555; /* Use a softer color for details */
+    margin-bottom: 0.5rem; /* Add spacing between details */
 }
 
 /* Project and Case Study Cards */
