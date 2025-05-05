@@ -8,11 +8,11 @@
 * {
     font-family: 'DM Serif Display', 'Arial', sans-serif; /* Apply DM Serif Display globally */
     color: #45334b; /* Set global text color */
-    font-size: 1.5rem;  /* Increase the base font size */
+    font-size: inherit;  /* Ensure font size inherits from parent */
 }
 
-h1, h2, h3 {
-    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Apply DM Serif Display to headings */
+h1, h2, h3, p, a, span {
+    font-size: inherit; /* Ensure all elements inherit the base font size */
 }
 
 h1 {
@@ -32,7 +32,7 @@ body {
     font-family: 'DM Serif Display', 'Arial', sans-serif; /* Use DM Serif Display as the primary font */
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.8;
     background-image: url('images/background.png'); /* Set background image */
     background-size: cover; /* Ensure the image covers the entire background */
     background-position: center; /* Center the image */
@@ -45,9 +45,10 @@ body {
     min-height: 100vh; /* Ensure the body spans the full viewport height */
     background-color: transparent; /* Remove white background */
     overflow: hidden; /* Disable scrolling */
+    font-size: 20px; /* Set a base font size for the entire document */
 }
 
-header, nav, section, footer, .skill-box, .project-card, .download-resume-button, .language-switcher button {
+header, nav, section, .skill-box, .project-card, .download-resume-button, .language-switcher button {
     font-family: 'DM Serif Display', 'Arial', sans-serif; /* Apply DM Serif Display to key elements */
 }
 
@@ -270,8 +271,13 @@ section {
     text-align: center; /* Center text inside sections */
     flex: 0; /* Prevent sections from growing unnecessarily */
     margin: 0; /* Remove unnecessary margins */
-    margin-top: 0; /* Remove unnecessary top margin */
+     /* Move sections higher using transform */
     padding-top: 1rem; /* Add a small padding for spacing */
+    font-size: 1.8rem; /* Increase font size for section text */
+}
+
+section h2, section p, section a {
+    font-size: inherit; /* Ensure headers, paragraphs, and links inherit the section font size */
 }
 
 section h2 {
@@ -395,7 +401,7 @@ footer {
     bottom: 0; /* Align to the bottom of the viewport */
     z-index: 1000; /* Ensure it stays above other elements */
     box-shadow: none; /* No shadow */
-    font-size: 1rem; /* Adjust font size for readability */
+    font-size: 0.8rem; /* Footer-specific font size */
 }
 
 /* Resume Button */
@@ -403,11 +409,11 @@ footer {
     display: inline-flex; /* Use flexbox for icon and text alignment */
     align-items: center; /* Vertically align icon and text */
     gap: 0.5rem; /* Add space between the icon and text */
-    padding: 0.8rem 1.5rem;
+    padding: 0.9rem 1.8rem; /* Adjust padding for a slightly smaller button */
     background-color: transparent; /* Make the background invisible */
     border: none; /* Remove borders */
     color: #1F2937; /* Set text color */
-    font-size: 1.2rem; /* Adjust font size */
+    font-size: 1.4rem; /* Slightly reduce font size for the button */
     font-weight: bold; /* Make text bold */
     cursor: pointer; /* Indicate interactivity */
     transition: color 0.3s ease; /* Smooth text color transition */
@@ -448,7 +454,7 @@ footer {
     padding: 3rem; /* Add more padding for consistency with the Skills section */
     background-color: #FFFFFF; /* Ensure consistent background color */
      /* Match the font with the rest of the site */
-    font-size: 1rem; /* Reduce font size for the entire section */
+    font-size: 1.4rem; /* Slightly reduce font size for the entire section */
     line-height: 1.8; /* Ensure proper spacing */
     color: #1F2937; /* Consistent text color */
     border-radius: 8px;
@@ -461,6 +467,13 @@ footer {
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     min-height: calc(100vh - 190px); /* Adjust height to fit between header and footer */
+    margin: 0 auto; /* Ensure consistent centering */
+    padding: 3rem; /* Ensure consistent padding */
+    display: flex; /* Ensure proper alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: calc(100vh - 190px); /* Ensure consistent height */
 }
 
 #about-contact h2, 
@@ -480,6 +493,15 @@ footer {
     display: inline-block;
     padding-bottom: 0.5rem; /* Add padding below the text */
     margin-bottom: 1rem; /* Add spacing below the header */
+}
+
+#about-contact a {
+    font-size: 1.4rem; /* Slightly reduce font size for links */
+    font-weight: bold; /* Make links more prominent */
+}
+
+#about-contact p {
+    margin-bottom: 0.5rem; /* Reduce spacing between paragraphs */
 }
 
 #skills {
@@ -607,7 +629,7 @@ nav ul.menu a:hover {
     padding: 3rem; /* Add more padding for consistency with the Skills section */
     background-color: #FFFFFF; /* Ensure consistent background color */
      /* Match the font with the rest of the site */
-    font-size: 1rem; /* Reduce font size for the entire section */
+    font-size: 1.4rem; /* Slightly reduce font size for the entire section */
     line-height: 1.8; /* Ensure proper spacing */
     color: #1F2937; /* Consistent text color */
     border-radius: 8px;
@@ -620,6 +642,13 @@ nav ul.menu a:hover {
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     min-height: calc(100vh - 190px); /* Adjust height to fit between header and footer */
+    margin: 0 auto; /* Ensure consistent centering */
+    padding: 3rem; /* Ensure consistent padding */
+    display: flex; /* Ensure proper alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: calc(100vh - 190px); /* Ensure consistent height */
 }
 
 #about-contact h2, 
@@ -639,6 +668,15 @@ nav ul.menu a:hover {
     display: inline-block;
     padding-bottom: 0.5rem; /* Add padding below the text */
     margin-bottom: 1rem; /* Add spacing below the header */
+}
+
+#about-contact a {
+    font-size: 1.4rem; /* Slightly reduce font size for links */
+    font-weight: bold; /* Make links more prominent */
+}
+
+#about-contact p {
+    margin-bottom: 0.5rem; /* Reduce spacing between paragraphs */
 }
 
 #skills {
