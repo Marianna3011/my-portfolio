@@ -53,21 +53,28 @@ header, nav, section, .skill-box, .project-card, .download-resume-button, .langu
 }
 
 nav {
-    position: fixed; /* Fix the menu to the left side */
-    font-family: 'DM Serif Display', 'Arial', sans-serif;
+    position: fixed; /* Keep the menu fixed on the left side */
     top: 0;
     left: 0;
     height: 100%; /* Make the menu span the full height of the viewport */
     width: 200px; /* Set a fixed width for the menu */
-    background: transparent; /* Make the menu background transparent */
-    box-shadow: none; /* Remove the shadow */
+    background: transparent; /* Keep the menu background transparent */
+    z-index: 9999; /* Ensure the menu is always above other elements */
+    box-shadow: none; /* Remove any shadow */
     padding: 2rem 1rem; /* Add padding inside the menu */
     display: flex;
     flex-direction: column; /* Stack menu items vertically */
     gap: 1.5rem; /* Add spacing between menu items */
-    z-index: 1001; /* Ensure the menu stays above other elements */
     justify-content: center; /* Center the menu vertically */
     border-right: none; /* Remove the right border */
+    opacity: 1; /* Ensure the menu is always visible */
+    visibility: visible; /* Ensure the menu is always visible */
+    pointer-events: auto; /* Allow interaction with the menu */
+}
+
+nav.hidden {
+    opacity: 1; /* Prevent the menu from becoming invisible */
+    visibility: visible; /* Ensure the menu remains visible */
 }
 
 nav ul.menu {
