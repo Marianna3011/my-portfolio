@@ -294,38 +294,69 @@ section h2 {
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Set grid to two columns */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
     gap: 2rem; /* Add spacing between skill cards */
     justify-content: center; /* Center the grid */
     padding: 2rem; /* Add padding around the grid */
 }
 
 .skill-box {
-    background: transparent; /* Add a light background for separation */
-    border: none; /* Add a subtle border */
-    border-radius: 8px; /* Round the corners */
+    background: linear-gradient(135deg, #f7f7f7, #eaeaea); /* Subtle gradient background */
+    border: 2px solid #ddd; /* Add a border for separation */
+    border-radius: 12px; /* Round the corners */
     padding: 1.5rem; /* Add padding inside the card */
-    text-align: center; /* Center-align text */ /* Add a subtle shadow */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add smooth hover effects */
+    text-align: center; /* Center-align text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
 }
 
+.skill-box:hover {
+    transform: translateY(-10px); /* Slightly lift the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Brighten background on hover */
+}
+
+.skill-box:nth-child(2) {
+    grid-column: span 2; /* Make the "Data Analysis" card span two columns */
+    text-align: left; /* Align text to the left for emphasis */
+    padding: 1.8rem; /* Add slightly more padding for a larger card */
+}
 
 .skill-box:last-child {
-    grid-column: span 2; /* Make the last card span two columns */
-    justify-self: center; /* Center the last card horizontally */
+    grid-column: span 1; /* Make the "Soft Skills" card the same size as others */
+    justify-self: center; /* Center the card horizontally */
 }
 
 .skill-title {
-    font-size: 1.5rem; /* Increase font size for titles */
+    font-size: 1.8rem; /* Increase font size for titles */
     font-weight: bold; /* Make titles bold */
+    color: #333; /* Darker color for titles */
     margin-bottom: 1rem; /* Add spacing below the title */
+    text-transform: uppercase; /* Make titles uppercase */
+    letter-spacing: 1px; /* Add letter spacing for emphasis */
+}
+
+.skill-details {
+    font-size: 1rem; /* Adjust font size for details */
+    color: #555; /* Use a softer color for details */
+    line-height: 1.6; /* Improve readability */
 }
 
 .skill-details span {
-    display: block; /* Display each detail on a new line */
-    font-size: 1rem; /* Adjust font size for details */
-    color: #555; /* Use a softer color for details */
-    margin-bottom: 0.5rem; /* Add spacing between details */
+    display: inline-block; /* Display each detail inline */
+    background: #f0f0f0; /* Add a background for each detail */
+    padding: 0.5rem 1rem; /* Add padding inside each detail */
+    margin: 0.3rem; /* Add spacing between details */
+    border-radius: 8px; /* Round the corners of each detail */
+    font-size: 0.9rem; /* Slightly smaller font for details */
+    color: #333; /* Darker text for details */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+}
+
+.skill-details span:hover {
+    background-color: #e0e0e0; /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Project and Case Study Cards */
