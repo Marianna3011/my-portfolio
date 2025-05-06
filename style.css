@@ -557,6 +557,8 @@ footer {
     grid-column: span 2; /* Span 2 columns */
     grid-row: span 1; /* Span 1 row */
     padding: 1.5rem; /* Shorter height */
+    font-size: 1.4rem; /* Match the font size of the About Me section */
+    line-height: 1.8; /* Ensure consistent line spacing */
 }
 
 #hobbies {
