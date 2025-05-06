@@ -1,52 +1,47 @@
-/* Import the DM Serif Display font */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
-
-/* Import the Bebas Neue font */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-/* Apply the font and text color to all elements */
 * {
-    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Apply DM Serif Display globally */
-    color: #45334b; /* Set global text color */
-    font-size: inherit;  /* Ensure font size inherits from parent */
+    font-family: 'DM Serif Display', 'Arial', sans-serif;
+    color: #45334b;
+    font-size: inherit;
 }
 
 h1, h2, h3, p, a, span {
-    font-size: inherit; /* Ensure all elements inherit the base font size */
+    font-size: inherit;
 }
 
 h1 {
-    font-size: 4rem; /* Increase the size of main headings */
+    font-size: 4rem;
 }
 
 h2 {
-    font-size: 1.5rem; /* Increase the size of section headings */
+    font-size: 1.5rem;
 }
 
 h3 {
-    font-size: 2rem; /* Increase the size of subheadings */
+    font-size: 2rem;
 }
 
-/* General styles */
 body {
-    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Use DM Serif Display as the primary font */
+    font-family: 'DM Serif Display', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.8;
-    background-image: url('images/background.png'); /* Set background image */
-    background-size: cover; /* Ensure the image covers the entire background */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-attachment: fixed; /* Fix the background in place */
-    color: #1F2937; /* Ensure text remains readable */
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #1F2937;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the grid container horizontally */
-    min-height: auto; /* Remove fixed height constraint */
-    background-color: transparent; /* Remove white background */
-    overflow: hidden; /* Disable scrolling */
-    font-size: 20px; /* Set a base font size for the entire document */
-    position: relative; /* Enable layering for the overlay */
+    align-items: center;
+    min-height: auto;
+    background-color: transparent;
+    overflow: hidden;
+    font-size: 20px;
+    position: relative;
 }
 
 body::before {
@@ -56,37 +51,37 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.3); /* White overlay with reduced opacity */
-    z-index: -1; /* Place behind all content */
+    background: rgba(255, 255, 255, 0.3);
+    z-index: -1;
 }
 
 header, nav, section, .skill-box, .project-card, .download-resume-button, .language-switcher button {
-    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Apply DM Serif Display to key elements */
+    font-family: 'DM Serif Display', 'Arial', sans-serif;
 }
 
 nav {
-    position: fixed; /* Keep the menu fixed on the left side */
+    position: fixed;
     top: 0;
     left: 0;
-    height: 100%; /* Make the menu span the full height of the viewport */
-    width: 200px; /* Set a fixed width for the menu */
-    background: transparent; /* Keep the menu background transparent */
-    z-index: 9999; /* Ensure the menu is always above other elements */
-    box-shadow: none; /* Remove any shadow */
-    padding: 2rem 1rem; /* Add padding inside the menu */
+    height: 100%;
+    width: 200px;
+    background: transparent;
+    z-index: 9999;
+    box-shadow: none;
+    padding: 2rem 1rem;
     display: flex;
-    flex-direction: column; /* Stack menu items vertically */
-    gap: 1.5rem; /* Add spacing between menu items */
-    justify-content: center; /* Center the menu vertically */
-    border-right: none; /* Remove the right border */
-    opacity: 1; /* Ensure the menu is always visible */
-    visibility: visible; /* Ensure the menu is always visible */
-    pointer-events: auto; /* Allow interaction with the menu */
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    border-right: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 nav.hidden {
-    opacity: 1; /* Prevent the menu from becoming invisible */
-    visibility: visible; /* Ensure the menu remains visible */
+    opacity: 1;
+    visibility: visible;
 }
 
 nav ul.menu {
@@ -95,45 +90,43 @@ nav ul.menu {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Stack menu items vertically */
-    gap: 1.5rem; /* Add spacing between menu items */
-    position: relative; /* Position the menu list relative for the line */
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
 }
 
 nav ul.menu::before {
     font-family: 'DM Serif Display', 'Arial', sans-serif;
-    content: ''; /* Add a decorative line */
+    content: '';
     position: absolute;
-    left: -4px; /* Position the line to the left of the menu */
-    top: 0; /* Start at the top of the menu */
-    height: 100%; /* Match the height of the menu list */
-    width: 4px; /* Set the width of the line */
-    background-color: #F7A8A8; /* Pink color for the line */
-    display: none; /* Disable the decorative line */
+    left: -4px;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #F7A8A8;
+    display: none;
 }
 
 nav ul.menu li {
     font-family: 'DM Serif Display', 'Arial', sans-serif;
     display: inline-flex;
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
+    align-items: center;
+    justify-content: center;
     background: #d9ebc3;
-     /* Green background for buttons */
-    border-radius: 8px; /* Rounded corners for buttons */
-    overflow: hidden; /* Prevent content overflow */
-    padding: 0.8rem 1.5rem; /* Add consistent padding */
-    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover effects */
-    box-shadow: none; /* Remove any shadow effect */
-    cursor: pointer; /* Make the entire object interactive */
-    background-color: transparent; /* Make the background invisible */
-    border: none; /* Remove borders */
-    transition: color 0.3s ease; /* Smooth text color transition */
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 0.8rem 1.5rem;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transition: color 0.3s ease;
 }
 
 nav ul.menu li:hover {
     font-family: 'DM Serif Display', 'Arial', sans-serif;
-    color: #D96C6C; /* Change text color on hover */
-    /* Add underline on hover */
+    color: #D96C6C;
     transform: scale(1.1);
 }
 
@@ -141,261 +134,254 @@ nav ul.menu li a {
     font-family: 'DM Serif Display', 'Arial', sans-serif;
     appearance: none;
     outline: none;
-    font-size: 1.2rem; /* Match your font size */
-     /* Match your font */
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #1F2937; /* Update text color */
-    text-decoration: none; /* Remove underline */
-    width: 100%; /* Ensure the link spans the full button */
-    text-align: center; /* Center the text inside the button */
-    pointer-events: none; /* Disable pointer events on the text */
-    color: inherit; /* Inherit text color from parent */
-    text-decoration: none; /* Remove underline */
-    pointer-events: none; /* Disable pointer events on the text */
+    color: #1F2937;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    color: inherit;
+    text-decoration: none;
+    pointer-events: none;
 }
 
 nav ul.menu li.selected a {
-    color: #F7A8A8; /* Pink text for the selected menu item */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth transition for text color */
+    color: #F7A8A8;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 main {
-    margin-left: 220px; /* Add space to the left to accommodate the menu */
-    display: flex; /* Use flexbox for vertical alignment */
-    flex-direction: column; /* Stack sections vertically */
-    justify-content: flex-start; /* Align content to the top */
-    align-items: center; /* Center content horizontally */
-    min-height: calc(100vh - 190px); /* Subtract header (110px) and footer (80px) heights */
-    padding: 0; /* Remove extra padding */
-    grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid */
-    gap: 2rem; /* Space between grid items */
-    width: 95%; /* Increase the width of the grid */
-    max-width: 1400px; /* Optional: Set a larger maximum width */
-    margin: 2rem 0; /* Add spacing around the grid */
-    flex: 1; /* Allow the main content to take up available space */
-    margin-top: 110px; /* Add space below the fixed header */
-    padding-top: 2rem; /* Add a small padding for spacing */
+    margin-left: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: calc(100vh - 190px);
+    padding: 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 95%;
+    max-width: 1400px;
+    margin: 2rem 0;
+    flex: 1;
+    margin-top: 110px;
+    padding-top: 2rem;
 }
 
-/* Header */
 header {
-    background: transparent; /* Make the header background transparent */
-    color: #000000; /* Black text color */
-    height: 110px; /* Slightly increase the height of the header */
-    padding: 0.4rem 1rem; /* Adjust padding for better spacing */
+    background: transparent;
+    color: #000000;
+    height: 110px;
+    padding: 0.4rem 1rem;
     display: flex;
-    align-items: center; /* Ensure content is vertically aligned */
-    overflow: hidden; /* Prevent content from overflowing */
-    justify-content: center; /* Center the container horizontally */
-    width: 100%; /* Make the header span the full width */
-    box-sizing: border-box; /* Include padding in the width calculation */
-    position: fixed; /* Keep the header fixed at the top */
-    top: 0; /* Align it to the top of the viewport */
-    z-index: 1000; /* Ensure it stays above other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for separation */
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition for hiding */
-    background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent background */
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 header .container {
-    width: 95%; /* Match the width of the body */
-    max-width: 1400px; /* Ensure it aligns with the body max-width */
-    margin: 0 auto; /* Center the content */
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center; /* Center the name horizontally */
-    align-items: center; /* Ensure vertical alignment remains consistent */
+    justify-content: center;
+    align-items: center;
 }
 
 header nav {
     display: flex;
-    align-items: center; /* Align navigation links vertically */
-    gap: 1rem; /* Space between navigation links */
+    align-items: center;
+    gap: 1rem;
 }
 
 .language-switcher {
     display: flex;
-    align-items: center; /* Align button vertically with navigation links */
-    gap: 1rem; /* Space between the button and navigation links */
-    position: absolute; /* Position the button relative to the viewport */
-    top: 1rem; /* Add spacing from the top */
-    right: 1rem; /* Add spacing from the right */
-    z-index: 1001; /* Ensure it stays above other elements */
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
     gap: 1rem;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    margin: 0;
+    padding: 0;
 }
 
-/* Header Navigation Links */
 header nav a {
-    color: #1F2937; /* Update text color */
+    color: #1F2937;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2rem; /* Match the size of the job title */
-    border-bottom: 2px solid transparent; /* Add underline effect */
+    font-size: 1.2rem;
+    border-bottom: 2px solid transparent;
     transition: border-color 0.3s ease;
 }
 
 header nav a:hover {
-    transform: scale(1.05); /* Slightly increase the size on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow on hover */
-    background-color: #F7A8A8; /* Change background to darker pastel pink */
-    color: #1F2937; /* Ensure text remains readable *//* Change underline to darker pastel pink */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #F7A8A8;
+    color: #1F2937;
 }
 
 #site-title {
-    display: inline-block; /* Ensure the name behaves as a block for alignment */
-    margin: 0; /* Remove default margin */
-    vertical-align: middle; /* Align with the job title */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
-    font-size: 3rem; /* Increase font size for the name */
-    text-align: center; /* Center align the name */
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+    font-size: 3rem;
+    text-align: center;
 }
 
 #site-title:hover {
-    transform: scale(1.2); /* Enlarge the name slightly on hover */
+    transform: scale(1.2);
 }
 
 #job-title {
-    display: inline-block; /* Ensure the job title behaves as a block for alignment */
-    margin: 0; /* Remove default margin */
-    vertical-align: middle; /* Align with the name */
-    font-size: 1.5rem; /* Increase font size for the job title */
-    text-align: center; /* Center align the job title */
-    margin-top: 0.5rem; /* Add spacing below the name */
-    color: #6B7280; /* Medium gray text */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #6B7280;
+    transition: transform 0.3s ease;
 }
 
 #job-title:hover {
-    transform: scale(1.1); /* Slightly enlarge the job title on hover */
+    transform: scale(1.1);
 }
 
-/* Sections */
 section {
-    padding: 3rem; /* Unified padding for all sections */
-    background-color: #FFFFFF; /* Consistent background color */
-    color: #1F2937; /* Near black text color */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Unified shadow effect */
-    border: none; /* Remove borders */
-    border-radius: 8px; /* Unified border radius */
-    position: relative; /* Ensure sections can move independently */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth movement and shadow effect */
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Align content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    min-height: auto; /* Allow sections to adjust height dynamically */
-    text-align: center; /* Center text inside sections */
-    flex: 0; /* Prevent sections from growing unnecessarily */
-    margin: 0; /* Remove unnecessary margins */
-     /* Move sections higher using transform */
-    padding-top: 1rem; /* Add a small padding for spacing */
-    font-size: 1.8rem; /* Increase font size for section text */
+    padding: 3rem;
+    background-color: #FFFFFF;
+    color: #1F2937;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    text-align: center;
+    flex: 0;
+    margin: 0;
+    padding-top: 1rem;
+    font-size: 1.8rem;
 }
 
 section h2, section p, section a {
-    font-size: inherit; /* Ensure headers, paragraphs, and links inherit the section font size */
+    font-size: inherit;
 }
 
 section h2 {
-    text-align: center; /* Center all section headers */
-    width: 100%; /* Ensure the header spans the full width */
-    margin: 0 auto; /* Center the header horizontally */
-    font-size: 1.2rem; /* Match the font size of menu items */
-    margin-bottom: 1rem; /* Add spacing below the header */
-    border-bottom: 4px solid #F7A8A8; /* Change underline to darker pastel pink */
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 4px solid #F7A8A8;
     display: inline-block;
     padding-bottom: 0.5rem;
 }
 
-/* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 2rem; /* Add spacing between skill cards */
-    justify-content: center; /* Center the grid */
-    padding: 2rem; /* Add padding around the grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
 }
 
 .skill-box {
-    background: #d9ebc3; /* Match the green background of project cards */
-    border-radius: 8px; /* Slightly rounded corners */
-    padding: 1.2rem; /* Compact padding */
-    text-align: center; /* Center-align text */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover effect */
+    background: #d9ebc3;
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .skill-box:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    background-color: #b8d8a8; /* Slightly darker green on hover */
+    transform: translateY(-5px);
+    background-color: #b8d8a8;
 }
 
 .skill-box:nth-child(2) {
-    grid-column: span 2; /* Make the "Data Analysis" card span two columns */
-    text-align: left; /* Align text to the left for emphasis */
-    padding: 1.8rem; /* Add slightly more padding for a larger card */
+    grid-column: span 2;
+    text-align: left;
+    padding: 1.8rem;
 }
 
 .skill-box:last-child {
-    grid-column: span 1; /* Make the "Soft Skills" card the same size as others */
-    justify-self: center; /* Center the card horizontally */
+    grid-column: span 1;
+    justify-self: center;
 }
 
 .skill-title {
-    font-size: 1.4rem; /* Slightly smaller font size */
-    font-weight: bold; /* Keep titles bold */
-    color: #1F2937; /* Near black text for contrast */
-    margin-bottom: 0.8rem; /* Reduce spacing below the title */
-    text-align: center; /* Center skill titles horizontally */
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #1F2937;
+    margin-bottom: 0.8rem;
+    text-align: center;
 }
 
 .skill-details {
-    display: flex; /* Use flexbox for alignment */
-    flex-wrap: wrap; /* Allow skills to wrap to the next line */
-    justify-content: center; /* Center skills horizontally */
-    gap: 0.5rem; /* Add spacing between skills */
-    text-align: center; /* Ensure text inside spans is centered */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
 }
 
 .skill-details span {
-    display: inline-block; /* Display each detail inline */
-    background: #ffffff; /* White background for all skills */
-    padding: 0.4rem 0.8rem; /* Compact padding */
-    margin: 0.2rem; /* Reduce spacing between details */
-    border-radius: 4px; /* Slightly rounded corners */
-    font-size: 0.9rem; /* Default font size for regular skills */
-    color: #1F2937; /* Near black text for readability */
-    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover effect */
-    font-weight: normal; /* Default weight for regular skills */
-    border: 1px solid #ddd; /* Subtle border for all skills */
+    display: inline-block;
+    background: #ffffff;
+    padding: 0.4rem 0.8rem;
+    margin: 0.2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #1F2937;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: normal;
+    border: 1px solid #ddd;
 }
 
 .skill-details span.key-skill {
-    order: -1; /* Move key skills to the beginning */
-    font-size: 1.1rem; /* Slightly larger font size for key skills */
-    font-weight: bold; /* Bold text for emphasis */
-    padding: 0.5rem 1rem; /* Slightly larger padding for key skills */
-    border: 2px solid #ccc; /* Slightly thicker border for key skills */
+    order: -1;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid #ccc;
 }
 
 .skill-details span:hover {
-    background-color: #f0f0f0; /* Light gray background on hover */
-    color: #1F2937; /* Keep text color consistent */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #f0f0f0;
+    color: #1F2937;
+    transform: scale(1.05);
 }
 
 .skill-box, .skill-title, .skill-details span {
-    font-family: 'Arial', sans-serif; /* Use a simpler font for skills */
+    font-family: 'Arial', sans-serif;
 }
 
-/* Project and Case Study Cards */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -403,337 +389,328 @@ section h2 {
 }
 
 .project-card {
-    background: #d9ebc3; /* Update background color to new green */
+    background: #d9ebc3;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: #1F2937; /* Near black text color */
-    font-size: 1.2rem; /* Set a consistent font size for all text in the project card */
-    line-height: 1.6; /* Adjust line height for better readability */
+    color: #1F2937;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
 .project-card:hover {
-    background-color: #F7A8A8; /* Change background to darker pastel pink */
-    color: #1F2937; /* Ensure text remains readable */
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    background-color: #F7A8A8;
+    color: #1F2937;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .project-card p, .project-card ul, .project-card ul li {
-    font-size: inherit; /* Ensure all text inherits the same font size */
-    line-height: inherit; /* Ensure consistent line height */
-    margin-bottom: 0.8rem; /* Add spacing between elements */
+    font-size: inherit;
+    line-height: inherit;
+    margin-bottom: 0.8rem;
 }
 
-/* Footer */
 footer {
-    display: block; /* Make the footer visible by default */
-    background: transparent; /* Keep the background transparent */
-    color: #1F2937; /* Text color */
-    height: 80px; /* Footer height */
-    padding: 0.4rem 1rem; /* Adjust padding */
+    display: block;
+    background: transparent;
+    color: #1F2937;
+    height: 80px;
+    padding: 0.4rem 1rem;
     display: flex;
-    align-items: center; /* Vertically align content */
-    justify-content: center; /* Center content horizontally */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Include padding in width calculation */
-    position: sticky; /* Stick to the bottom */
-    bottom: 0; /* Align to the bottom of the viewport */
-    z-index: 1000; /* Ensure it stays above other elements */
-    box-shadow: none; /* No shadow */
-    font-size: 0.8rem; /* Footer-specific font size */
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition for hiding */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    box-shadow: none;
+    font-size: 0.8rem;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* Resume Button */
 .download-resume-button {
-    display: inline-flex; /* Use flexbox for icon and text alignment */
-    align-items: center; /* Vertically align icon and text */
-    gap: 0.5rem; /* Add space between the icon and text */
-    padding: 0.9rem 1.8rem; /* Adjust padding for a slightly smaller button */
-    background-color: transparent; /* Make the background invisible */
-    border: none; /* Remove borders */
-    color: #1F2937; /* Set text color */
-    font-size: 1.4rem; /* Slightly reduce font size for the button */
-    font-weight: bold; /* Make text bold */
-    cursor: pointer; /* Indicate interactivity */
-    transition: color 0.3s ease; /* Smooth text color transition */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.8rem;
+    background-color: transparent;
+    border: none;
+    color: #1F2937;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .download-resume-button:hover {
-    color: #D96C6C; /* Change text color on hover */
-    text-decoration: underline; /* Add underline on hover */
+    color: #D96C6C;
+    text-decoration: underline;
 }
 
 .button-icon {
-    font-size: 1.5rem; /* Adjust icon size */
+    font-size: 1.5rem;
 }
 
-/* Translation Button */
 .language-switcher button {
-    display: inline-flex; /* Use flexbox for alignment */
-    align-items: center; /* Vertically align icon and text */
-    gap: 0.5rem; /* Add space between the icon and text */
-    background-color: transparent; /* Make the background invisible */
-    border: none; /* Remove borders */
-    color: #1F2937; /* Set text color */
-    font-size: 1.2rem; /* Adjust font size */
-    font-weight: bold; /* Make text bold */
-    cursor: pointer; /* Indicate interactivity */
-    transition: color 0.3s ease; /* Smooth text color transition */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: none;
+    color: #1F2937;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .language-switcher button:hover {
-    color: #D96C6C; /* Change text color on hover */
-    text-decoration: underline; /* Add underline on hover */
-    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    color: #D96C6C;
+    text-decoration: underline;
+    transform: scale(1.1);
 }
 
-/* Adjust specific section sizes */
 #about-contact {
-    grid-column: span 4; /* Make the About Me section span all 4 columns */
-    padding: 3rem; /* Add more padding for consistency with the Skills section */
-    background-color: #FFFFFF; /* Ensure consistent background color */
-     /* Match the font with the rest of the site */
-    font-size: 1.4rem; /* Slightly reduce font size for the entire section */
-    line-height: 1.8; /* Ensure proper spacing */
-    color: #1F2937; /* Consistent text color */
+    grid-column: span 4;
+    padding: 3rem;
+    background-color: #FFFFFF;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #1F2937;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
-    text-align: center; /* Center content */
-    margin-top: 0; /* Remove unnecessary top margin */
-    padding-top: 0; /* Remove unnecessary top padding */
-    display: flex; /* Ensure proper alignment */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    min-height: calc(100vh - 190px); /* Adjust height to fit between header and footer */
-    margin: 0 auto; /* Ensure consistent centering */
-    padding: 3rem; /* Ensure consistent padding */
-    display: flex; /* Ensure proper alignment */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    min-height: calc(100vh - 190px); /* Ensure consistent height */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 190px);
+    margin: 0 auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 190px);
 }
 
 #about-contact h2, 
 #about-contact p, 
 #about-contact .contact-info p, 
 #about-contact a {
-    font-size: inherit; /* Ensure all elements inherit the reduced font size */
+    font-size: inherit;
 }
 
 #about-contact .contact-info p, 
 #about-contact .contact-info a {
-    font-size: inherit; /* Ensure consistency with the rest of the about-contact section */
+    font-size: inherit;
 }
 
 #about-contact p#contact-text:first-of-type {
-    border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
+    border-bottom: 4px solid #F7A8A8;
     display: inline-block;
-    padding-bottom: 0.5rem; /* Add padding below the text */
-    margin-bottom: 1rem; /* Add spacing below the header */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 #about-contact a {
-    font-size: 1.4rem; /* Slightly reduce font size for links */
-    font-weight: bold; /* Make links more prominent */
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
 #about-contact p {
-    margin-bottom: 0.5rem; /* Reduce spacing between paragraphs */
+    margin-bottom: 0.5rem;
 }
 
 #skills {
-    grid-column: span 4; /* Expand the Skills section to span all columns */
-    grid-row: span 2; /* Increase the height of the Skills section */
-    padding: 3rem; /* Add more padding for a larger section */
-    margin-top: -50px; /* Move the section higher */
-    display: flex; /* Ensure proper alignment */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text inside the section */
+    grid-column: span 4;
+    grid-row: span 2;
+    padding: 3rem;
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #projects {
-    grid-column: span 4; /* Span all 4 columns */
-    grid-row: span 2; /* Span 2 rows */
-    padding: 3rem; /* Make it larger */
-    max-height: 850px; /* Maximum height for the section */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding-right: 3rem; /* Add padding for better readability */
-    scrollbar-width: thin; /* Simplify scrollbar for Firefox */
-    scrollbar-color: #F7A8A8 transparent; /* Pink scrollbar for Firefox */
+    grid-column: span 4;
+    grid-row: span 2;
+    padding: 3rem;
+    max-height: 850px;
+    overflow-y: auto;
+    padding-right: 3rem;
+    scrollbar-width: thin;
+    scrollbar-color: #F7A8A8 transparent;
 }
 
-/* Scrollbar styling for WebKit browsers (Chrome, Edge, Safari) */
 #projects::-webkit-scrollbar {
-    width: 8px; /* Narrow scrollbar width */
+    width: 8px;
 }
 
 #projects::-webkit-scrollbar-thumb {
-    background-color: #F7A8A8; /* Pink scrollbar thumb */
-    border-radius: 4px; /* Rounded scrollbar thumb */
+    background-color: #F7A8A8;
+    border-radius: 4px;
 }
 
 #projects::-webkit-scrollbar-track {
-    background: transparent; /* Transparent scrollbar track */
+    background: transparent;
 }
 
 #experience {
-    grid-column: span 2; /* Span 2 columns */
-    grid-row: span 1; /* Span 1 row */
-    padding: 1.5rem; /* Shorter height */
-    font-size: 1.4rem; /* Match the font size of the About Me section */
-    line-height: 1.8; /* Ensure consistent line spacing */
+    grid-column: span 2;
+    grid-row: span 1;
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.8;
 }
 
 #hobbies {
-    grid-column: span 2; /* Span 2 columns */
-    grid-row: span 1; /* Span 1 row */
-    padding: 1.5rem; /* Shorter height */
+    grid-column: span 2;
+    grid-row: span 1;
+    padding: 1.5rem;
 }
 
 #about-title, #skills-title, #projects-title, #experience-title {
-    text-align: center; /* Center the header */
-    width: 100%; /* Ensure the header spans the full width */
-    margin: 0 auto; /* Center the header horizontally */
-    font-size: 1.4rem; /* Match the font size of the About Me header */
-    margin-bottom: 1rem; /* Add spacing below the header */
-    border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-bottom: 4px solid #F7A8A8;
     display: inline-block;
-    padding-bottom: 0.5rem; /* Add padding below the text */
+    padding-bottom: 0.5rem;
 }
 
 #about-title {
-    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Match nav ul.menu font */
-    font-size: 1.2rem; /* Match nav ul.menu font size */
-    font-weight: bold; /* Match nav ul.menu font weight */
-    color: #1F2937; /* Match nav ul.menu text color */
-    text-align: center; /* Center align the text */
-    text-decoration: none; /* Remove underline */
-    margin-bottom: 1rem; /* Add spacing below */
+    font-family: 'DM Serif Display', 'Arial', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1F2937;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 1rem;
 }
 
 #about-text, #contact-text, #experience-text, #hobbies-text {
-    font-size: 1.2rem; /* Increase font size for better readability */
-    line-height: 1.8; /* Adjust line height for better spacing */
+    font-size: 1.2rem;
+    line-height: 1.8;
 }
 
 .skill-details, .project-card p {
-    font-size: 1.1rem; /* Slightly increase font size for details and project descriptions */
-    line-height: 1.7; /* Adjust line height for consistency */
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 p, a, span {
-    font-size: 1.4rem; /* Increase the size of paragraph text and links */
+    font-size: 1.4rem;
 }
 
 a {
-    color: #F7A8A8; /* Set link color to pastel pink */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    color: #F7A8A8;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #D96C6C; /* Darker pink on hover */
-    text-decoration: underline; /* Add underline on hover */
+    color: #D96C6C;
+    text-decoration: underline;
 }
 
-/* Contact Info Styling */
 .contact-info {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align the contact info */
-    gap: 0.5rem; /* Add spacing between items */
-    margin-top: 1rem; /* Add spacing above the contact info */
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .contact-info p {
-    margin: 0; /* Remove default margins */
-    font-size: 1.1rem; /* Adjust font size for better readability */
+    margin: 0;
+    font-size: 1.1rem;
 }
 
 .contact-info a {
-    color: #F7A8A8; /* Match link color with the rest of the site */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    color: #F7A8A8;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-    color: #D96C6C; /* Darker pink on hover */
-    text-decoration: underline; /* Add underline on hover */
+    color: #D96C6C;
+    text-decoration: underline;
 }
 
 #about-contact, #skills, #projects, #experience, #hobbies {
-    background-color: transparent; /* Remove white background */
-    box-shadow: none; /* Remove shadow */
-    border: none; /* Remove borders */
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
 }
 
 header, footer {
-    background-color: transparent; /* Make the background completely invisible */
-    box-shadow: none; /* Remove any shadow */
-    border: none; /* Remove any borders */
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition for hiding */
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 header.hidden, footer.hidden {
-    opacity: 0; /* Make header and footer invisible */
-    visibility: hidden; /* Prevent interaction when hidden */
-    pointer-events: none; /* Disable pointer events when hidden */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 nav ul.menu a {
     appearance: none;
     outline: none;
-    font-size: 1.2rem; /* Match your font size */
-     /* Match your font */
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #1F2937; /* Update text color */
-    text-decoration: none; /* Remove underline */
-    width: 100%; /* Ensure the link spans the full button */
-    text-align: center; /* Center the text inside the button */
-    pointer-events: none; /* Disable hover effects on the text */
+    color: #1F2937;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
 }
 
 nav ul.menu a:hover {
-    background-color: #D96C6C; /* Darker pink on hover */
-    transform: translateX(-5px) translateY(-5px); /* Slightly move the button */
+    background-color: #D96C6C;
+    transform: translateX(-5px) translateY(-5px);
 }
 
 #skills-title {
-    text-align: center; /* Center the header */
-    width: 100%; /* Ensure the header spans the full width */
-    margin: 0 auto; /* Center the header horizontally */
-    font-size: 1.4rem; /* Match the font size of the About Me header */
-    margin-bottom: 1rem; /* Add spacing below the header */
-    border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-bottom: 4px solid #F7A8A8;
     display: inline-block;
-    padding-bottom: 0.5rem; /* Add padding below the text */
+    padding-bottom: 0.5rem;
 }
 
 #experience, #skills {
-    max-height: 850px; /* Maximum height for the sections */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding-right: 3rem; /* Increase padding to move scrollbar further right */
-    scrollbar-width: thin; /* Simplify scrollbar for Firefox */
-    scrollbar-color: #F7A8A8 transparent; /* Pink scrollbar for Firefox */
+    max-height: 850px;
+    overflow-y: auto;
+    padding-right: 3rem;
+    scrollbar-width: thin;
+    scrollbar-color: #F7A8A8 transparent;
 }
 
-/* Scrollbar styling for WebKit browsers (Chrome, Edge, Safari) */
 #experience::-webkit-scrollbar, #skills::-webkit-scrollbar {
-    width: 8px; /* Narrow scrollbar width */
+    width: 8px;
 }
 
 #experience::-webkit-scrollbar-thumb, #skills::-webkit-scrollbar-thumb {
-    background-color: #F7A8A8; /* Pink scrollbar thumb */
-    border-radius: 4px; /* Rounded scrollbar thumb */
+    background-color: #F7A8A8;
+    border-radius: 4px;
 }
 
 #experience::-webkit-scrollbar-track, #skills::-webkit-scrollbar-track {
-    background: transparent; /* Transparent scrollbar track */
-    margin-right: 5px; /* Add margin to push scrollbar further right */
+    background: transparent;
+    margin-right: 5px;
 }
