@@ -47,6 +47,10 @@ body {
     overflow: hidden; /* Disable scrolling */
     font-size: 20px; /* Set a base font size for the entire document */
     position: relative; /* Enable layering for the overlay */
+    transform: scale(0.75); /* Scale the page to 75% size */
+    transform-origin: top left; /* Ensure scaling starts from the top-left corner */
+    width: 133.33%; /* Compensate for the reduced scale to maintain layout */
+    overflow-x: hidden; /* Prevent horizontal scrolling due to scaling */
 }
 
 body::before {
