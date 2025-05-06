@@ -6,7 +6,7 @@ const translations = {
         navResume: "Resume",
         navSkills: "Skills",
         navExperience: "Experience",
-        navHobbies: undefined,
+        navHobbies: undefined, // Removed Hobbies translation
         aboutTitle: "About Me",
         aboutText: "Hi, I'm <b>Marianna Myszkowska</b>, an Artificial Intelligence student at Poznań University of Technology, based in Poznań, Poland. I'm passionate about <b>Data Science</b> and <b>Data Analysis</b>, and I'm actively working toward a career that combines both. Currently, I work as an Integrations Specialist at Lawbiz Technology, contributing to the development of the Umownik application. In addition to my data interests, I enjoy front-end development and programming, which allows me to build intuitive interfaces and bridge the gap between data and users.",
         projectsTitle: "Projects",
@@ -16,8 +16,8 @@ const translations = {
         project2Text: "Created a data visualization dashboard using Python and D3.js to analyze business metrics.",
         experienceTitle: "Experience",
         experienceText: "I have worked on various projects, including web development, data visualization, and software engineering. My experience spans multiple industries, allowing me to adapt and deliver impactful solutions.",
-        hobbiesTitle: undefined,
-        hobbiesText: undefined,
+        hobbiesTitle: undefined, // Removed Hobbies title
+        hobbiesText: undefined, // Removed Hobbies text
         skillsTitle: "Skills",
         skills: [
             { title: "Programming", details: ["Python (pandas, numpy, matplotlib, seaborn, scikit-learn, PyTorch)", "SQL", "Git", "Bash"] },
@@ -34,11 +34,11 @@ const translations = {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    const translation = translations.en;
-    document.getElementById('site-title').innerHTML = translation.siteTitle;
-    document.getElementById('job-title').innerHTML = translation.jobTitle;
+    const translation = translations.en; // Use only English translations
+    document.getElementById('site-title').innerHTML = translation.siteTitle; // Use innerHTML for bold text
+    document.getElementById('job-title').innerHTML = translation.jobTitle; // Use innerHTML for bold text
     document.getElementById('about-title').textContent = translation.aboutTitle;
-    document.getElementById('about-text').innerHTML = translation.aboutText;
+    document.getElementById('about-text').innerHTML = translation.aboutText; // Use innerHTML for bold text
     document.getElementById('projects-title').textContent = translation.projectsTitle;
     document.getElementById('project1-title').textContent = translation.project1Title;
     document.getElementById('project1-text').textContent = translation.project1Text;
@@ -46,13 +46,13 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('project2-text').textContent = translation.project2Text;
     document.getElementById('experience-title').textContent = translation.experienceTitle;
     document.getElementById('experience-text').textContent = translation.experienceText;
-    document.getElementById('hobbies-title')?.remove();
-    document.getElementById('hobbies-text')?.remove();
+    document.getElementById('hobbies-title')?.remove(); // Remove Hobbies title if it exists
+    document.getElementById('hobbies-text')?.remove(); // Remove Hobbies text if it exists
     document.getElementById('skills-title').textContent = translation.skillsTitle;
     document.getElementById('footer-text').textContent = translation.footerText;
 
     const skillsGrid = document.querySelector('.skills-grid');
-    skillsGrid.innerHTML = '';
+    skillsGrid.innerHTML = ''; // Clear existing content
     translation.skills.forEach(skill => {
         const skillBox = document.createElement('div');
         skillBox.className = 'skill-box';
@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         skillsGrid.appendChild(skillBox);
     });
 
+    // Ensure only the "about-contact" section is visible initially
     document.querySelectorAll('main section').forEach(section => {
         section.style.display = section.id === 'about-contact' ? 'block' : 'none';
     });
@@ -82,18 +83,22 @@ document.addEventListener('DOMContentLoaded', function () {
 document.querySelectorAll('nav ul.menu li').forEach(item => {
     item.addEventListener('click', function () {
         const sectionId = this.querySelector('a').getAttribute('data-section');
+        // Show the selected section and hide others
         document.querySelectorAll('main section').forEach(section => {
             section.style.display = section.id === sectionId ? 'block' : 'none';
         });
 
+        // Highlight the selected menu item
         document.querySelectorAll('nav ul.menu li').forEach(li => li.classList.remove('selected'));
         this.classList.add('selected');
 
+        // Show footer only on the "About Me" page
         const footer = document.querySelector('footer');
         footer.style.display = sectionId === 'about-contact' ? 'flex' : 'none';
     });
 });
 
+// Ensure the menu is always visible on page load
 const menu = document.querySelector('nav');
-menu.style.opacity = 1;
-menu.style.visibility = 'visible';
+menu.style.opacity = 1; // Always visible
+menu.style.visibility = 'visible'; // Always visible
