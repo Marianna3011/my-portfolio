@@ -47,10 +47,6 @@ body {
     overflow: hidden; /* Disable scrolling */
     font-size: 20px; /* Set a base font size for the entire document */
     position: relative; /* Enable layering for the overlay */
-    transform: scale(0.75); /* Scale the page to 75% size */
-    transform-origin: top left; /* Ensure scaling starts from the top-left corner */
-    width: 133.33%; /* Compensate for the reduced scale to maintain layout */
-    overflow-x: hidden; /* Prevent horizontal scrolling due to scaling */
 }
 
 body::before {
@@ -146,7 +142,7 @@ nav ul.menu li a {
     font-family: 'DM Serif Display', 'Arial', sans-serif;
     appearance: none;
     outline: none;
-    font-size: clamp(1rem, 2vw, 1.5rem); /* Dynamically adjust font size based on viewport width */
+    font-size: 1.2rem; /* Match your font size */
      /* Match your font */
     font-weight: bold;
     color: #1F2937; /* Update text color */
@@ -688,7 +684,7 @@ a:hover {
     transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-contact-info a:hover {
+.contact-info a:hover {
     color: #D96C6C; /* Darker pink on hover */
     text-decoration: underline; /* Add underline on hover */
 }
@@ -765,7 +761,7 @@ nav ul.menu a:hover {
 }
 
 /* Responsive styles for mobile devices */
-@media (max-width: 1550px) {
+@media (max-width: 1500px) {
     body {
         font-size: 16px; /* Adjust base font size for smaller screens */
         overflow-y: auto; /* Enable full-page scrolling */
@@ -792,11 +788,11 @@ nav ul.menu a:hover {
 
     nav ul.menu li {
         padding: 0.3rem 0.8rem; /* Reduce padding for smaller screens */
-        font-size: 1rem; /* Increase font size for menu items in mobile version */
+        font-size: 0.8rem; /* Reduce font size for menu items */
     }
 
     nav ul.menu li a {
-        font-size: 1rem; /* Increase font size for menu links in mobile version */
+        font-size: 0.8rem; /* Adjust font size for links */
     }
 
     main {
