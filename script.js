@@ -83,23 +83,14 @@ document.addEventListener('DOMContentLoaded', function () {
 document.querySelectorAll('nav ul.menu li').forEach(item => {
     item.addEventListener('click', function () {
         const sectionId = this.querySelector('a').getAttribute('data-section');
-        const header = document.querySelector('header');
-        const footer = document.querySelector('footer');
-
-        // Apply the hidden class with a smooth transition to header and footer only
-        if (sectionId === 'about-contact') {
-            header.classList.remove('hidden');
-            footer.classList.remove('hidden');
-        } else {
-            header.classList.add('hidden');
-            footer.classList.add('hidden');
-        }
-
         // Show the selected section and hide others
         document.querySelectorAll('main section').forEach(section => {
-            if (section.id === 'hobbies') section.remove(); // Remove Hobbies section if it exists
             section.style.display = section.id === sectionId ? 'block' : 'none';
         });
+
+        // Show footer only on the "About Me" page
+        const footer = document.querySelector('footer');
+        footer.style.display = sectionId === 'about-contact' ? 'flex' : 'none';
     });
 });
 

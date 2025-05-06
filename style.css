@@ -56,7 +56,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.6); /* White overlay with reduced opacity */
+    background: rgba(255, 255, 255, 0.3); /* White overlay with reduced opacity */
     z-index: -1; /* Place behind all content */
 }
 
@@ -172,7 +172,7 @@ main {
     max-width: 1400px; /* Optional: Set a larger maximum width */
     margin: 2rem 0; /* Add spacing around the grid */
     flex: 1; /* Allow the main content to take up available space */
-    margin-top: 0; /* Remove extra margin at the top */
+    margin-top: 110px; /* Add space below the fixed header */
     padding-top: 2rem; /* Add a small padding for spacing */
 }
 
@@ -188,11 +188,12 @@ header {
     justify-content: center; /* Center the container horizontally */
     width: 100%; /* Make the header span the full width */
     box-sizing: border-box; /* Include padding in the width calculation */
-    position: sticky; /* Make the header stick to the top */
+    position: fixed; /* Keep the header fixed at the top */
     top: 0; /* Align it to the top of the viewport */
     z-index: 1000; /* Ensure it stays above other elements */
-    box-shadow: none; /* Remove the shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for separation */
     transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition for hiding */
+    background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent background */
 }
 
 header .container {
@@ -416,10 +417,11 @@ section h2 {
 
 /* Footer */
 footer {
-    background: transparent; /* Invisible background */
+    display: block; /* Make the footer visible by default */
+    background: transparent; /* Keep the background transparent */
     color: #1F2937; /* Text color */
-    height: 80px; /* Slightly smaller height than the header */
-    padding: 0.4rem 1rem; /* Adjust padding for better spacing */
+    height: 80px; /* Footer height */
+    padding: 0.4rem 1rem; /* Adjust padding */
     display: flex;
     align-items: center; /* Vertically align content */
     justify-content: center; /* Center content horizontally */
@@ -563,11 +565,11 @@ footer {
     padding: 1.5rem; /* Shorter height */
 }
 
-#about-title, #contact-title {
+#about-title, #skills-title, #projects-title, #experience-title {
     text-align: center; /* Center the header */
     width: 100%; /* Ensure the header spans the full width */
     margin: 0 auto; /* Center the header horizontally */
-    font-size: 1.2rem; /* Match the font size of the contact text */
+    font-size: 1.4rem; /* Match the font size of the About Me header */
     margin-bottom: 1rem; /* Add spacing below the header */
     border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
     display: inline-block;
@@ -671,165 +673,36 @@ nav ul.menu a:hover {
     transform: translateX(-5px) translateY(-5px); /* Slightly move the button */
 }
 
-/* Adjust specific section sizes */
-#about-contact {
-    grid-column: span 4; /* Make the About Me section span all 4 columns */
-    padding: 3rem; /* Add more padding for consistency with the Skills section */
-    background-color: #FFFFFF; /* Ensure consistent background color */
-     /* Match the font with the rest of the site */
-    font-size: 1.4rem; /* Slightly reduce font size for the entire section */
-    line-height: 1.8; /* Ensure proper spacing */
-    color: #1F2937; /* Consistent text color */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for sections */
-    text-align: center; /* Center content */
-    margin-top: 0; /* Remove unnecessary top margin */
-    padding-top: 0; /* Remove unnecessary top padding */
-    display: flex; /* Ensure proper alignment */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    min-height: calc(100vh - 190px); /* Adjust height to fit between header and footer */
-    margin: 0 auto; /* Ensure consistent centering */
-    padding: 3rem; /* Ensure consistent padding */
-    display: flex; /* Ensure proper alignment */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    min-height: calc(100vh - 190px); /* Ensure consistent height */
-}
-
-#about-contact h2, 
-#about-contact p, 
-#about-contact .contact-info p, 
-#about-contact a {
-    font-size: inherit; /* Ensure all elements inherit the reduced font size */
-}
-
-#about-contact .contact-info p, 
-#about-contact .contact-info a {
-    font-size: inherit; /* Ensure consistency with the rest of the about-contact section */
-}
-
-#about-contact p#contact-text:first-of-type {
-    border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
-    display: inline-block;
-    padding-bottom: 0.5rem; /* Add padding below the text */
-    margin-bottom: 1rem; /* Add spacing below the header */
-}
-
-#about-contact a {
-    font-size: 1.4rem; /* Slightly reduce font size for links */
-    font-weight: bold; /* Make links more prominent */
-}
-
-#about-contact p {
-    margin-bottom: 0.5rem; /* Reduce spacing between paragraphs */
-}
-
-#skills {
-    grid-column: span 4; /* Expand the Skills section to span all columns */
-    grid-row: span 2; /* Increase the height of the Skills section */
-    padding: 3rem; /* Add more padding for a larger section */
-    margin-top: -50px; /* Move the section higher */
-    display: flex; /* Ensure proper alignment */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text inside the section */
-}
-
-#projects {
-    grid-column: span 4; /* Span all 4 columns */
-    grid-row: span 2; /* Span 2 rows */
-    padding: 3rem; /* Make it larger */
-}
-
-#experience {
-    grid-column: span 2; /* Span 2 columns */
-    grid-row: span 1; /* Span 1 row */
-    padding: 1.5rem; /* Shorter height */
-}
-
-#hobbies {
-    grid-column: span 2; /* Span 2 columns */
-    grid-row: span 1; /* Span 1 row */
-    padding: 1.5rem; /* Shorter height */
-}
-
-#about-title, #contact-title {
+#skills-title {
     text-align: center; /* Center the header */
     width: 100%; /* Ensure the header spans the full width */
     margin: 0 auto; /* Center the header horizontally */
-    font-size: 1.2rem; /* Match the font size of the contact text */
+    font-size: 1.4rem; /* Match the font size of the About Me header */
     margin-bottom: 1rem; /* Add spacing below the header */
     border-bottom: 4px solid #F7A8A8; /* Add a pastel pink underline */
     display: inline-block;
     padding-bottom: 0.5rem; /* Add padding below the text */
 }
 
-#about-title {
-    font-family: 'DM Serif Display', 'Arial', sans-serif; /* Match nav ul.menu font */
-    font-size: 1.2rem; /* Match nav ul.menu font size */
-    font-weight: bold; /* Match nav ul.menu font weight */
-    color: #1F2937; /* Match nav ul.menu text color */
-    text-align: center; /* Center align the text */
-    text-decoration: none; /* Remove underline */
-    margin-bottom: 1rem; /* Add spacing below */
+#experience, #skills {
+    max-height: 850px; /* Maximum height for the sections */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 3rem; /* Increase padding to move scrollbar further right */
+    scrollbar-width: thin; /* Simplify scrollbar for Firefox */
+    scrollbar-color: #F7A8A8 transparent; /* Pink scrollbar for Firefox */
 }
 
-#about-text, #contact-text, #experience-text, #hobbies-text {
-    font-size: 1.2rem; /* Increase font size for better readability */
-    line-height: 1.8; /* Adjust line height for better spacing */
+/* Scrollbar styling for WebKit browsers (Chrome, Edge, Safari) */
+#experience::-webkit-scrollbar, #skills::-webkit-scrollbar {
+    width: 8px; /* Narrow scrollbar width */
 }
 
-.skill-details, .project-card p {
-    font-size: 1.1rem; /* Slightly increase font size for details and project descriptions */
-    line-height: 1.7; /* Adjust line height for consistency */
+#experience::-webkit-scrollbar-thumb, #skills::-webkit-scrollbar-thumb {
+    background-color: #F7A8A8; /* Pink scrollbar thumb */
+    border-radius: 4px; /* Rounded scrollbar thumb */
 }
 
-p, a, span {
-    font-size: 1.4rem; /* Increase the size of paragraph text and links */
-}
-
-a {
-    color: #F7A8A8; /* Set link color to pastel pink */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-a:hover {
-    color: #D96C6C; /* Darker pink on hover */
-    text-decoration: underline; /* Add underline on hover */
-}
-
-/* Contact Info Styling */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align the contact info */
-    gap: 0.5rem; /* Add spacing between items */
-    margin-top: 1rem; /* Add spacing above the contact info */
-}
-
-.contact-info p {
-    margin: 0; /* Remove default margins */
-    font-size: 1.1rem; /* Adjust font size for better readability */
-}
-
-.contact-info a {
-    color: #F7A8A8; /* Match link color with the rest of the site */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.contact-info a:hover {
-    color: #D96C6C; /* Darker pink on hover */
-    text-decoration: underline; /* Add underline on hover */
-}
-
-#about-contact, #skills, #projects, #experience, #hobbies {
-    background-color: transparent; /* Remove white background */
-    box-shadow: none; /* Remove shadow */
-    border: none; /* Remove borders */
+#experience::-webkit-scrollbar-track, #skills::-webkit-scrollbar-track {
+    background: transparent; /* Transparent scrollbar track */
+    margin-right: 5px; /* Add margin to push scrollbar further right */
 }
