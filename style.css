@@ -299,6 +299,7 @@ section {
      /* Move sections higher using transform */
     padding-top: 1rem; /* Add a small padding for spacing */
     font-size: 1.8rem; /* Increase font size for section text */
+    scroll-margin-top: 110px; /* Ensure smooth scrolling stops below the header */
 }
 
 section h2, section p, section a {
@@ -551,7 +552,8 @@ footer {
     grid-column: span 4; /* Expand the Skills section to span all columns */
     grid-row: span 2; /* Increase the height of the Skills section */
     padding: 3rem; /* Add more padding for a larger section */
-    margin-top: -50px; /* Move the section higher */
+    margin-top: calc(110px + 2rem); /* Ensure it sits below the header (adjust 110px as needed) */
+    padding-top: 2rem; /* Add consistent padding for spacing */
     display: flex; /* Ensure proper alignment */
     flex-direction: column; /* Stack content vertically */
     justify-content: center; /* Center content vertically */
