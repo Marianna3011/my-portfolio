@@ -559,7 +559,7 @@ footer {
     padding-right: 3rem; /* Add padding for better readability */
     scrollbar-width: thin; /* Simplify scrollbar for Firefox */
     scrollbar-color: #F7A8A8 transparent; /* Pink scrollbar for Firefox */
-    margin-top: -50px; /* Move the sections higher */
+    margin-top: -80px; /* Move the sections higher */
 }
 
 /* Scrollbar styling for WebKit browsers (Chrome, Edge, Safari) */
@@ -586,7 +586,7 @@ footer {
     padding-right: 3rem; /* Add padding for better readability */
     scrollbar-width: thin; /* Simplify scrollbar for Firefox */
     scrollbar-color: #F7A8A8 transparent; /* Pink scrollbar for Firefox */
-    margin-top: -50px; /* Move the sections higher */
+    margin-top: -80px; /* Move the sections higher */
 }
 
 /* Scrollbar styling for WebKit browsers (Chrome, Edge, Safari) */
@@ -609,7 +609,7 @@ footer {
     padding: 1.5rem; /* Shorter height */
     font-size: 1.4rem; /* Match the font size of the About Me section */
     line-height: 1.8; /* Ensure consistent line spacing */
-    margin-top: -50px; /* Move the sections higher */
+    margin-top: -80px; /* Move the sections higher */
 }
 
 #hobbies {
@@ -856,4 +856,8 @@ nav ul.menu a:hover {
         margin-bottom: 0.5rem; /* Reduce spacing below the title */
         padding-bottom: 0.2rem; /* Adjust padding for a tighter layout */
     }
+}
+
+#skills, #experience, #projects, #about-contact {
+    margin-top: -120px; /* Move all sections even higher */
 }
