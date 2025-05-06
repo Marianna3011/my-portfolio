@@ -146,7 +146,7 @@ nav ul.menu li a {
     font-family: 'DM Serif Display', 'Arial', sans-serif;
     appearance: none;
     outline: none;
-    font-size: 1.2rem; /* Match your font size */
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Dynamically adjust font size based on viewport width */
      /* Match your font */
     font-weight: bold;
     color: #1F2937; /* Update text color */
@@ -688,7 +688,7 @@ a:hover {
     transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.contact-info a:hover {
+contact-info a:hover {
     color: #D96C6C; /* Darker pink on hover */
     text-decoration: underline; /* Add underline on hover */
 }
@@ -765,7 +765,7 @@ nav ul.menu a:hover {
 }
 
 /* Responsive styles for mobile devices */
-@media (max-width: 1500px) {
+@media (max-width: 1550px) {
     body {
         font-size: 16px; /* Adjust base font size for smaller screens */
         overflow-y: auto; /* Enable full-page scrolling */
