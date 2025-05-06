@@ -88,6 +88,10 @@ document.querySelectorAll('nav ul.menu li').forEach(item => {
             section.style.display = section.id === sectionId ? 'block' : 'none';
         });
 
+        // Highlight the selected menu item
+        document.querySelectorAll('nav ul.menu li').forEach(li => li.classList.remove('selected'));
+        this.classList.add('selected');
+
         // Show footer only on the "About Me" page
         const footer = document.querySelector('footer');
         footer.style.display = sectionId === 'about-contact' ? 'flex' : 'none';
