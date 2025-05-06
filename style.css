@@ -559,7 +559,7 @@ footer {
     padding-right: 3rem; /* Add padding for better readability */
     scrollbar-width: thin; /* Simplify scrollbar for Firefox */
     scrollbar-color: #F7A8A8 transparent; /* Pink scrollbar for Firefox */
-    margin-top: -20px; /* Move the sections slightly higher */
+    margin-top: -30px; /* Move the sections slightly higher */
 }
 
 /* Scrollbar styling for WebKit browsers (Chrome, Edge, Safari) */
@@ -608,7 +608,7 @@ footer {
     padding: 1.5rem; /* Shorter height */
     font-size: 1.4rem; /* Match the font size of the About Me section */
     line-height: 1.8; /* Ensure consistent line spacing */
-    margin-top: -20px; /* Move the sections slightly higher */
+    margin-top: -30px; /* Move the sections slightly higher */
 }
 
 #hobbies {
