@@ -175,7 +175,7 @@ main {
     max-width: 1400px; /* Optional: Set a larger maximum width */
     margin: 2rem 0; /* Add spacing around the grid */
     flex: 1; /* Allow the main content to take up available space */
-    margin-top: 110px; /* Add space below the fixed header */
+    margin-top: 200px; /* Add margin to ensure the content sits below the menu */
     padding-top: 2rem; /* Add a small padding for spacing */
 }
 
@@ -744,10 +744,12 @@ nav ul.menu a:hover {
 @media (max-width: 1500px) {
     body {
         font-size: 16px; /* Adjust base font size for smaller screens */
+        overflow-y: auto; /* Enable full-page scrolling */
+        display: block; /* Ensure body content flows naturally */
     }
 
     nav {
-        position: fixed;
+        position: relative; /* Make the menu scroll with the page */
         top: 0;
         left: 0;
         width: 100%; /* Make the navigation span the full width */
@@ -756,6 +758,7 @@ nav ul.menu a:hover {
         justify-content: space-around; /* Space out menu items */
         padding: 1rem;
         z-index: 1000;
+        margin-top: 0; /* Remove top margin */
     }
 
     nav ul.menu {
@@ -769,7 +772,7 @@ nav ul.menu a:hover {
 
     main {
         margin-left: 0; /* Remove left margin for mobile */
-        margin-top: 60px; /* Add space below the fixed navigation */
+        margin-top: 0; /* Remove top margin */
         padding: 1rem; /* Add padding for better spacing */
     }
 
@@ -777,17 +780,35 @@ nav ul.menu a:hover {
         height: auto; /* Adjust header height */
         padding: 1rem; /* Add padding */
         text-align: center; /* Center-align header content */
+        position: relative; /* Make the header scroll with the page */
     }
 
-    #site-title {
-        font-size: 2rem; /* Adjust font size for smaller screens */
+    footer {
+        position: relative; /* Make the footer scroll with the page */
+        padding: 1rem; /* Adjust footer padding */
+        font-size: 0.8rem; /* Adjust font size */
     }
 
-    #job-title {
-        font-size: 1rem; /* Adjust font size for smaller screens */
+    #skills, #projects, #experience {
+        max-height: none; /* Remove max-height constraint */
+        overflow: visible; /* Allow content to flow naturally */
+        padding-right: 0; /* Remove extra padding for scrollbars */
     }
 
     .skills-grid, .project-grid {
+        margin-top: 2rem; /* Adjust spacing for better layout */
+    }
+
+    .skills-grid {
+        margin-top: 6rem; /* Ensure the grid starts below the menu */
+        padding: 4rem 1rem; /* Maintain larger padding for the section */
+    }
+
+    section#skills {
+        min-height: 120vh; /* Keep the skills section longer */
+    }
+
+    .project-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid for smaller screens */
         gap: 1rem; /* Reduce spacing between grid items */
     }
@@ -799,5 +820,11 @@ nav ul.menu a:hover {
     footer {
         padding: 1rem; /* Adjust footer padding */
         font-size: 0.8rem; /* Adjust font size */
+    }
+
+    #skills-title {
+        margin-top: 3rem; /* Add spacing to push the title below the menu */
+        margin-bottom: 0.5rem; /* Reduce spacing below the title */
+        padding-bottom: 0.2rem; /* Adjust padding for a tighter layout */
     }
 }
