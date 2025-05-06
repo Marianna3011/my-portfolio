@@ -549,16 +549,31 @@ footer {
 }
 
 #skills {
-    grid-column: span 4; /* Expand the Skills section to span all columns */
-    grid-row: span 2; /* Increase the height of the Skills section */
-    padding: 3rem; /* Add more padding for a larger section */
-    margin-top: calc(110px + 2rem); /* Ensure it sits below the header (adjust 110px as needed) */
-    padding-top: 2rem; /* Add consistent padding for spacing */
-    display: flex; /* Ensure proper alignment */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text inside the section */
+    grid-column: span 2; /* Match the column span of the experience section */
+    grid-row: span 1; /* Match the row span of the experience section */
+    padding: 1.5rem; /* Match the padding of the experience section */
+    font-size: 1.4rem; /* Match the font size of the experience section */
+    line-height: 1.8; /* Match the line height of the experience section */
+    max-height: 850px; /* Set a maximum height for the section */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 3rem; /* Add padding for better readability */
+    scrollbar-width: thin; /* Simplify scrollbar for Firefox */
+    scrollbar-color: #F7A8A8 transparent; /* Pink scrollbar for Firefox */
+}
+
+/* Scrollbar styling for WebKit browsers (Chrome, Edge, Safari) */
+#skills::-webkit-scrollbar {
+    width: 8px; /* Narrow scrollbar width */
+}
+
+#skills::-webkit-scrollbar-thumb {
+    background-color: #F7A8A8; /* Pink scrollbar thumb */
+    border-radius: 4px; /* Rounded scrollbar thumb */
+}
+
+#skills::-webkit-scrollbar-track {
+    background: transparent; /* Transparent scrollbar track */
+    margin-right: 5px; /* Add margin to push scrollbar further right */
 }
 
 #projects {
