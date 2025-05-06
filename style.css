@@ -771,6 +771,10 @@ nav ul.menu a:hover {
         font-size: 0.8rem; /* Reduce font size for menu items */
     }
 
+    nav ul.menu li a {
+        font-size: 0.8rem; /* Adjust font size for links */
+    }
+
     main {
         margin-left: 0; /* Remove left margin for mobile */
         margin-top: 0; /* Remove top margin */
