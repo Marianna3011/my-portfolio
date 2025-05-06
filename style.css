@@ -44,8 +44,20 @@ body {
     align-items: center; /* Center the grid container horizontally */
     min-height: auto; /* Remove fixed height constraint */
     background-color: transparent; /* Remove white background */
-    overflow: auto; /* Enable scrolling to ensure all content is visible */
+    overflow: hidden; /* Disable scrolling */
     font-size: 20px; /* Set a base font size for the entire document */
+    position: relative; /* Enable layering for the overlay */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* White overlay with reduced opacity */
+    z-index: -1; /* Place behind all content */
 }
 
 header, nav, section, .skill-box, .project-card, .download-resume-button, .language-switcher button {
@@ -309,19 +321,17 @@ section h2 {
 }
 
 .skill-box {
-    background: linear-gradient(135deg, #f7f7f7, #eaeaea); /* Subtle gradient background */
-    border: 2px solid #ddd; /* Add a border for separation */
-    border-radius: 12px; /* Round the corners */
-    padding: 1.5rem; /* Add padding inside the card */
+    background: #d9ebc3; /* Match the green background of project cards */
+    border-radius: 8px; /* Slightly rounded corners */
+    padding: 1.2rem; /* Compact padding */
     text-align: center; /* Center-align text */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease, background-color 0.3s ease; /* Smooth hover effect */
 }
 
 .skill-box:hover {
-    transform: translateY(-10px); /* Slightly lift the card on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Brighten background on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+    background-color: #b8d8a8; /* Slightly darker green on hover */
 }
 
 .skill-box:nth-child(2) {
@@ -336,35 +346,50 @@ section h2 {
 }
 
 .skill-title {
-    font-size: 1.8rem; /* Increase font size for titles */
-    font-weight: bold; /* Make titles bold */
-    color: #333; /* Darker color for titles */
-    margin-bottom: 1rem; /* Add spacing below the title */
-    text-transform: uppercase; /* Make titles uppercase */
-    letter-spacing: 1px; /* Add letter spacing for emphasis */
+    font-size: 1.4rem; /* Slightly smaller font size */
+    font-weight: bold; /* Keep titles bold */
+    color: #1F2937; /* Near black text for contrast */
+    margin-bottom: 0.8rem; /* Reduce spacing below the title */
+    text-align: center; /* Center skill titles horizontally */
 }
 
 .skill-details {
-    font-size: 1rem; /* Adjust font size for details */
-    color: #555; /* Use a softer color for details */
-    line-height: 1.6; /* Improve readability */
+    display: flex; /* Use flexbox for alignment */
+    flex-wrap: wrap; /* Allow skills to wrap to the next line */
+    justify-content: center; /* Center skills horizontally */
+    gap: 0.5rem; /* Add spacing between skills */
+    text-align: center; /* Ensure text inside spans is centered */
 }
 
 .skill-details span {
     display: inline-block; /* Display each detail inline */
-    background: #f0f0f0; /* Add a background for each detail */
-    padding: 0.5rem 1rem; /* Add padding inside each detail */
-    margin: 0.3rem; /* Add spacing between details */
-    border-radius: 8px; /* Round the corners of each detail */
-    font-size: 0.9rem; /* Slightly smaller font for details */
-    color: #333; /* Darker text for details */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+    background: #ffffff; /* White background for all skills */
+    padding: 0.4rem 0.8rem; /* Compact padding */
+    margin: 0.2rem; /* Reduce spacing between details */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-size: 0.9rem; /* Default font size for regular skills */
+    color: #1F2937; /* Near black text for readability */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover effect */
+    font-weight: normal; /* Default weight for regular skills */
+    border: 1px solid #ddd; /* Subtle border for all skills */
+}
+
+.skill-details span.key-skill {
+    order: -1; /* Move key skills to the beginning */
+    font-size: 1.1rem; /* Slightly larger font size for key skills */
+    font-weight: bold; /* Bold text for emphasis */
+    padding: 0.5rem 1rem; /* Slightly larger padding for key skills */
+    border: 2px solid #ccc; /* Slightly thicker border for key skills */
 }
 
 .skill-details span:hover {
-    background-color: #e0e0e0; /* Change background on hover */
+    background-color: #f0f0f0; /* Light gray background on hover */
+    color: #1F2937; /* Keep text color consistent */
     transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.skill-box, .skill-title, .skill-details span {
+    font-family: 'Arial', sans-serif; /* Use a simpler font for skills */
 }
 
 /* Project and Case Study Cards */
@@ -512,6 +537,12 @@ footer {
     grid-column: span 4; /* Expand the Skills section to span all columns */
     grid-row: span 2; /* Increase the height of the Skills section */
     padding: 3rem; /* Add more padding for a larger section */
+    margin-top: -50px; /* Move the section higher */
+    display: flex; /* Ensure proper alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text inside the section */
 }
 
 #projects {
@@ -700,6 +731,12 @@ nav ul.menu a:hover {
     grid-column: span 4; /* Expand the Skills section to span all columns */
     grid-row: span 2; /* Increase the height of the Skills section */
     padding: 3rem; /* Add more padding for a larger section */
+    margin-top: -50px; /* Move the section higher */
+    display: flex; /* Ensure proper alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text inside the section */
 }
 
 #projects {
